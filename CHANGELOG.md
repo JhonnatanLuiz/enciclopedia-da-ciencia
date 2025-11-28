@@ -7,6 +7,75 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ---
 
+## [0.2.0-beta] - 2025-11-28
+
+### 🌌 Página Sistema Solar Completa
+
+Esta versão adiciona uma página completa e rica sobre o Sistema Solar, com conteúdo educativo detalhado, imagens e vídeo exclusivo.
+
+### ✨ Adicionado
+
+#### Página Sistema Solar (`/capitulo/planeta-terra/sistema-solar`)
+
+**O Sol - Nossa Estrela**
+- Imagem principal do Sol com gradiente overlay
+- Dados científicos: diâmetro, temperatura, idade
+- Cards informativos com design moderno
+
+**Os 8 Planetas**
+- Grid de cards com imagens de alta qualidade
+- Informações: tipo (Rochoso/Gasoso/Gigante de Gelo), diâmetro, distância
+- Curiosidades científicas para cada planeta
+- Tags coloridas por tipo de planeta
+
+**Os 5 Planetas Anões**
+- Plutão em destaque com imagem grande
+- Grid com Éris, Haumea, Makemake e Ceres
+- Localização (Cinturão de Kuiper, Disco Disperso, etc.)
+- Curiosidades sobre cada planeta anão
+
+**Cometas Famosos**
+- 3 cometas com imagens: Halley, Hale-Bopp, 67P/Churyumov-Gerasimenko
+- Comparação detalhada Halley vs Hale-Bopp
+- Períodos orbitais, última e próxima passagem
+- Informações sobre a missão Rosetta
+
+**Satélites Naturais (10 Luas)**
+- Grid compacto de 5 colunas
+- Luas de Terra, Júpiter, Saturno, Urano e Netuno
+- Efeito hover com curiosidades
+- Tags coloridas por planeta
+
+**Vídeo Exclusivo do YouTube**
+- Player embeddado do vídeo criado especialmente para o site
+- Design destacado com gradiente vermelho/roxo
+- Link direto para o YouTube
+
+**Dados Científicos Expandidos**
+- Estatísticas principais (idade, massa do Sol, luas, asteroides)
+- 6 cards de curiosidades fascinantes
+- Seção de comparações de escala
+- 4 recordes do Sistema Solar
+
+#### API de Imagens
+- **`/api/planeta-img.ts`** - API route para servir imagens do sistema solar
+- Suporte para PNG e JPG
+- Cache de longa duração (1 ano)
+
+#### Imagens Adicionadas
+- 8 imagens de planetas (Mercúrio a Netuno)
+- 1 imagem do Sol
+- 5 imagens de planetas anões
+- 3 imagens de cometas famosos
+- 10 imagens de satélites naturais (luas)
+
+### 🔧 Técnico
+- API route customizada para contornar limitações de arquivos estáticos
+- Importações dinâmicas para componentes 3D
+- Layout responsivo com grid adaptativo
+
+---
+
 ## [0.1.0-beta] - 2025-11-28
 
 ### 🎉 Versão Beta - Lançamento Público

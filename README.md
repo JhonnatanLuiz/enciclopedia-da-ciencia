@@ -82,6 +82,7 @@ A **Enciclopédia da Ciência** é uma aplicação web moderna desenvolvida com 
 - [x] **Átomo 2D Animado** - CSS animations com órbitas e elétrons
 - [x] **Átomo 3D Interativo** - Three.js com rotação 360° e OrbitControls
 - [x] **Terra 3D Interativa** - Modelo 3D do Planeta Terra com texturas realistas
+- [x] **Sistema Solar 3D** - Visualização interativa do Sistema Solar com Three.js
 - [x] **Barra de Busca** - Sistema de busca com Fuse.js
 - [x] **Cards de Capítulos** - Grid responsivo com hover effects
 - [x] **Persistência de Tema** - localStorage para manter preferência
@@ -89,6 +90,8 @@ A **Enciclopédia da Ciência** é uma aplicação web moderna desenvolvida com 
 - [x] **Service Worker** - Cache de páginas e assets para uso offline
 - [x] **Instalável** - Pode ser instalado como app no desktop/mobile
 - [x] **Conteúdo Planeta Terra** - Introdução completa com imagens e vídeo
+- [x] **Página Sistema Solar Completa** - Os 8 planetas, planetas anões, cometas, satélites naturais
+- [x] **Galeria de Imagens** - Imagens de planetas, luas, cometas com API dedicada
 - [x] **Integração YouTube** - Vídeos educativos incorporados
 
 ### Em Desenvolvimento 🚧
@@ -107,7 +110,8 @@ enciclopedia-da-ciencia/
 │   ├── 📂 icons/
 │   │   └── icon.svg              # Ícone do PWA
 │   ├── 📂 images/
-│   │   └── planeta-terra/        # Imagens do capítulo
+│   │   ├── planeta-terra/        # Imagens do capítulo
+│   │   └── sistema-solar/        # Imagens de planetas, luas e cometas
 │   ├── 📂 textures/
 │   │   └── earth.jpg             # Textura 3D da Terra
 │   ├── manifest.json             # Manifest do PWA
@@ -117,6 +121,7 @@ enciclopedia-da-ciencia/
 │   │   ├── 📂 content/
 │   │   │   ├── Atom3D.tsx          # Átomo 3D com Three.js
 │   │   │   ├── PlanetEarth3D.tsx   # Terra 3D com Three.js
+│   │   │   ├── SolarSystem3D.tsx   # Sistema Solar 3D
 │   │   │   └── HeroAtom.tsx        
 │   │   ├── 📂 layout/
 │   │   │   ├── Header.tsx          # Cabeçalho com navegação
@@ -134,6 +139,8 @@ enciclopedia-da-ciencia/
 │   │   ├── index.tsx               # Página inicial
 │   │   ├── buscar.tsx              # Página de busca
 │   │   ├── sumario.tsx             # Sumário
+│   │   ├── 📂 api/
+│   │   │   └── planeta-img.ts      # API para servir imagens do sistema solar
 │   │   └── 📂 capitulo/            # Páginas dos capítulos
 │   │       ├── planeta-terra/
 │   │       ├── seres-vivos/

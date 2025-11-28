@@ -835,12 +835,12 @@ export default function IntroducaoPlanetaTerra() {
               </Link>
 
               <Link 
-                href="/capitulo/planeta-terra/estrutura"
+                href="/capitulo/planeta-terra/sistema-solar"
                 className="flex items-center gap-3 p-4 bg-slate-800/50 rounded-xl border border-slate-700/50 hover:border-blue-500/50 transition-colors group text-right sm:text-left"
               >
                 <div className="order-2 sm:order-1">
                   <div className="text-sm text-slate-500">Próximo</div>
-                  <div className="text-white">Estrutura da Terra</div>
+                  <div className="text-white">Sistema Solar</div>
                 </div>
                 <FaArrowRight className="text-blue-400 order-1 sm:order-2 group-hover:translate-x-1 transition-transform" />
               </Link>
