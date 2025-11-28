@@ -1,0 +1,29 @@
+{
+  "name": "Enciclopédia da Ciência",
+  "short_name": "Enciclopédia",
+  "description": "Explore o universo do conhecimento científico de forma interativa e visual",
+  "theme_color": "#0f172a",
+  "background_color": "#0f172a",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "start_url": "/",
+  "id": "/",
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["education", "books", "reference"],
+  "lang": "pt-BR",
+  "dir": "ltr"
+}
