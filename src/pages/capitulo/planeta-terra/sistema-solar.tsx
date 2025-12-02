@@ -1,21 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
-import dynamic from "next/dynamic";
-import { FaSun, FaGlobeAmericas, FaMoon, FaRocket, FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { FaSun, FaGlobeAmericas, FaMoon, FaArrowLeft, FaArrowRight, FaExternalLinkAlt } from "react-icons/fa";
 import { GiMoonOrbit } from "react-icons/gi";
-
-// Importação dinâmica do componente 3D para evitar erros de SSR
-const SolarSystem3D = dynamic(
-  () => import("@/components/content/SolarSystem3D"),
-  { ssr: false, loading: () => (
-    <div className="w-full h-[500px] rounded-2xl bg-slate-900 flex items-center justify-center">
-      <div className="text-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-500 mx-auto mb-4"></div>
-        <p className="text-gray-400">Carregando Sistema Solar 3D...</p>
-      </div>
-    </div>
-  )}
-);
 
 // Dados dos planetas
 const planetas = [
@@ -325,7 +311,43 @@ export default function SistemaSolar() {
             <GiMoonOrbit className="text-cyan-400" />
             Visualização Interativa
           </h2>
-          <SolarSystem3D />
+          
+          {/* Sketchfab Embed */}
+          <div className="relative rounded-2xl overflow-hidden bg-slate-900/50 border border-slate-700/50">
+            <iframe
+              title="Sistema Solar 3D - Modelo Interativo"
+              src="https://sketchfab.com/models/f7896d085f474ef28631d88129268411/embed?autostart=1&ui_theme=dark&ui_infos=0&ui_watermark=0"
+              allow="autoplay; fullscreen; xr-spatial-tracking"
+              allowFullScreen
+              className="w-full h-[400px] md:h-[550px] rounded-2xl"
+            />
+            
+            {/* Link externo para Sketchfab */}
+            <div className="absolute bottom-4 right-4">
+              <a
+                href="https://sketchfab.com/3d-models/solar-system-f7896d085f474ef28631d88129268411"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-3 py-2 bg-slate-900/80 hover:bg-slate-800 backdrop-blur-sm rounded-lg text-sm text-gray-300 hover:text-cyan-400 transition-all border border-slate-700/50"
+              >
+                <FaExternalLinkAlt className="text-xs" />
+                Ver no Sketchfab
+              </a>
+            </div>
+          </div>
+          
+          {/* Instruções de interação */}
+          <div className="mt-4 flex flex-wrap justify-center gap-4 text-sm text-slate-400">
+            <span className="flex items-center gap-2">
+              <span className="text-cyan-400">🖱️</span> Arraste para rotacionar
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="text-yellow-400">🔍</span> Scroll para zoom
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="text-purple-400">👆</span> Clique para explorar
+            </span>
+          </div>
         </section>
 
         {/* O Sol */}
