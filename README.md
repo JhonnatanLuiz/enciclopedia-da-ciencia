@@ -82,7 +82,8 @@ A **Enciclopédia da Ciência** é uma aplicação web moderna desenvolvida com 
 - [x] **Átomo 2D Animado** - CSS animations com órbitas e elétrons
 - [x] **Átomo 3D Interativo** - Three.js com rotação 360° e OrbitControls
 - [x] **Terra 3D Interativa** - Modelo 3D do Planeta Terra com texturas realistas
-- [x] **Sistema Solar 3D** - Visualização interativa do Sistema Solar com Three.js
+- [x] **Sistema Solar 3D** - Visualização interativa via Sketchfab embed
+- [x] **Estrutura da Terra 3D** - Modelo interativo das camadas terrestres via Sketchfab
 - [x] **Barra de Busca** - Sistema de busca com Fuse.js
 - [x] **Cards de Capítulos** - Grid responsivo com hover effects
 - [x] **Persistência de Tema** - localStorage para manter preferência
@@ -91,8 +92,12 @@ A **Enciclopédia da Ciência** é uma aplicação web moderna desenvolvida com 
 - [x] **Instalável** - Pode ser instalado como app no desktop/mobile
 - [x] **Conteúdo Planeta Terra** - Introdução completa com imagens e vídeo
 - [x] **Página Sistema Solar Completa** - Os 8 planetas, planetas anões, cometas, satélites naturais
+- [x] **Página Estrutura da Terra** - Camadas, infográfico, vídeo educativo e carousel de imagens
 - [x] **Galeria de Imagens** - Imagens de planetas, luas, cometas com API dedicada
+- [x] **Carousel de Imagens** - Componente com autoplay, controles manuais e indicadores
+- [x] **Infográficos Educativos** - Imagens informativas com dados científicos
 - [x] **Integração YouTube** - Vídeos educativos incorporados
+- [x] **Integração Sketchfab** - Modelos 3D interativos incorporados
 
 ### Em Desenvolvimento 🚧
 
@@ -111,7 +116,9 @@ enciclopedia-da-ciencia/
 │   │   └── icon.svg              # Ícone do PWA
 │   ├── 📂 images/
 │   │   ├── planeta-terra/        # Imagens do capítulo
-│   │   └── sistema-solar/        # Imagens de planetas, luas e cometas
+│   │   ├── sistema-solar/        # Imagens de planetas, luas e cometas
+│   │   ├── estrutura-terra/      # 12 imagens do PDF educativo
+│   │   └── infograficos/         # Infográficos científicos
 │   ├── 📂 textures/
 │   │   └── earth.jpg             # Textura 3D da Terra
 │   ├── manifest.json             # Manifest do PWA
@@ -119,16 +126,18 @@ enciclopedia-da-ciencia/
 ├── 📂 src/
 │   ├── 📂 components/
 │   │   ├── 📂 content/
-│   │   │   ├── Atom3D.tsx          # Átomo 3D com Three.js
-│   │   │   ├── PlanetEarth3D.tsx   # Terra 3D com Three.js
-│   │   │   ├── SolarSystem3D.tsx   # Sistema Solar 3D
+│   │   │   ├── Atom3D.tsx            # Átomo 3D com Three.js
+│   │   │   ├── PlanetEarth3D.tsx     # Terra 3D com Three.js
+│   │   │   ├── SolarSystem3D.tsx     # Sistema Solar 3D
+│   │   │   ├── EarthLayersModel.tsx  # Modelo 3D das camadas terrestres
 │   │   │   └── HeroAtom.tsx        
 │   │   ├── 📂 layout/
-│   │   │   ├── Header.tsx          # Cabeçalho com navegação
-│   │   │   ├── Sidebar.tsx         # Menu lateral de capítulos
-│   │   │   └── Footer.tsx          # Rodapé
+│   │   │   ├── Header.tsx            # Cabeçalho com navegação
+│   │   │   ├── Sidebar.tsx           # Menu lateral de capítulos
+│   │   │   └── Footer.tsx            # Rodapé
 │   │   └── 📂 ui/
-│   │       └── ThemeToggle.tsx     # Botão de alternância de tema
+│   │       ├── ThemeToggle.tsx       # Botão de alternância de tema
+│   │       └── ImageCarousel.tsx     # Carousel de imagens com autoplay
 │   ├── 📂 contexts/
 │   │   └── ThemeContext.tsx        # Contexto de tema (opcional)
 │   ├── 📂 data/

@@ -7,6 +7,73 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ---
 
+## [0.3.0-beta] - 2025-12-02
+
+### 🌍 Página Estrutura da Terra Completa + Integração Sketchfab
+
+Esta versão adiciona conteúdo multimídia rico às páginas Sistema Solar e Estrutura da Terra, incluindo modelos 3D via Sketchfab, infográficos, vídeos e carousel de imagens.
+
+### ✨ Adicionado
+
+#### Página Sistema Solar
+- **Sketchfab Embed** - Modelo 3D interativo do Sistema Solar
+- **Instruções de interação** - Dicas de uso (rotacionar, zoom, explorar)
+- **Link externo** para visualização no Sketchfab
+
+#### Página Estrutura da Terra (`/capitulo/planeta-terra/estrutura-terra`)
+
+**Visualização 3D via Sketchfab**
+- Modelo interativo das camadas internas da Terra
+- Autostart com tema escuro
+- Link para visualização no Sketchfab
+
+**Infográfico Educativo**
+- Infográfico "Desvendando a Estrutura da Terra"
+- Composição química e propriedades mecânicas das camadas
+- Fonte: Enciclopédia da Ciência
+
+**Vídeo Educativo**
+- Player do YouTube incorporado
+- Design destacado com gradiente vermelho/roxo
+- Link direto para o YouTube
+
+**Carousel de Imagens - O Interior do Nosso Planeta**
+- 12 imagens do PDF educativo
+- Transição automática a cada 5 segundos
+- Controles manuais: Anterior, Pausar/Reproduzir, Próxima
+- Indicadores de pontos clicáveis
+- Barra de progresso visual
+
+#### Novos Componentes
+
+**ImageCarousel.tsx** (`src/components/ui/`)
+- Carousel reutilizável com autoplay
+- Controles de navegação responsivos
+- Indicadores de progresso
+- Compatível com tema escuro
+
+**EarthLayersModel.tsx** (`src/components/content/`)
+- Modelo 3D das camadas terrestres
+- Desenvolvido com React Three Fiber
+
+#### Novos Assets
+
+**Imagens do PDF** (`/images/estrutura-terra/`)
+- 12 imagens renomeadas de 1.jpg a 12.jpg
+- Originalmente: O_Interior_do_Nosso_Planeta_Uma_Jornada_Científica_page-0001 a 0012
+
+**Infográfico** (`/images/infograficos/`)
+- Estrutura da Terra infográfico.png
+
+### 🔧 Técnico
+
+- Integração com Sketchfab via iframe embed
+- Parâmetros: autostart=1, ui_theme=dark, ui_infos=0, ui_watermark=0
+- Renomeação de arquivos para evitar problemas com caracteres especiais
+- Componente ImageCarousel com useState e useEffect para autoplay
+
+---
+
 ## [0.2.0-beta] - 2025-11-28
 
 ### 🌌 Página Sistema Solar Completa
