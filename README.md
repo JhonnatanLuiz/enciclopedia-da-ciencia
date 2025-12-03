@@ -11,7 +11,7 @@
 
 **Uma enciclopédia científica interativa com 10 capítulos e 209 páginas de conteúdo**
 
-**🆕 Versão Beta - Novembro 2025**
+**🆕 Versão 0.4.0 Beta - Dezembro 2025**
 
 [🚀 Demo](#demo) • [📖 Documentação](#estrutura-do-projeto) • [🛠️ Instalação](#como-executar) • [📝 Changelog](./CHANGELOG.md)
 
@@ -98,6 +98,8 @@ A **Enciclopédia da Ciência** é uma aplicação web moderna desenvolvida com 
 - [x] **Infográficos Educativos** - Imagens informativas com dados científicos
 - [x] **Integração YouTube** - Vídeos educativos incorporados
 - [x] **Integração Sketchfab** - Modelos 3D interativos incorporados
+- [x] **Navegação Padronizada** - Botões anterior/próximo consistentes entre páginas
+- [x] **Rodapé Institucional** - Texto padronizado em todas as páginas
 
 ### Em Desenvolvimento 🚧
 
@@ -296,7 +298,13 @@ colors: {
 
 ## 🗺️ Roadmap
 
-### Versão 0.1.0 - Beta (Atual) ✅
+### Versão 0.4.0 - Beta (Atual) ✅
+- ✅ Navegação padronizada entre subcapítulos
+- ✅ Rodapé institucional consistente
+- ✅ Compatibilidade com modo escuro
+- ✅ Documentação atualizada
+
+### Versão 0.1.0 - Beta ✅
 - ✅ Estrutura base do projeto
 - ✅ Layout responsivo
 - ✅ Modo escuro/claro

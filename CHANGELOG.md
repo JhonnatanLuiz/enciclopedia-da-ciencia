@@ -7,6 +7,95 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ---
 
+## [0.4.1-beta] - 2025-12-03
+
+### 🌍 Nova Página: Rotação da Terra + Visualização 3D
+
+Esta versão adiciona uma página completa e interativa sobre a Rotação da Terra, com componente 3D da Terra girando em seu eixo inclinado.
+
+### ✨ Adicionado
+
+#### Página Rotação da Terra (`/capitulo/planeta-terra/rotacao-terra`)
+
+**Visualização 3D Interativa**
+- **PlanetEarthRotation3D.tsx** - Componente React Three Fiber com:
+  - Terra girando com eixo inclinado em 23,5°
+  - Linha amarela indicando o eixo de rotação
+  - Linha vermelha marcando o equador
+  - Rotação contínua automática via `useFrame`
+  - Fundo espacial com estrelas (`Stars` do Drei)
+  - `OrbitControls` para interação do usuário
+
+**Conteúdo Científico Completo**
+- **Dados Científicos** - 4 cards: Período Sideral (23h 56m 4s), Velocidade no Equador (1.670 km/h), Inclinação Axial (23,5°), Velocidade Angular (465 m/s)
+- **Velocidade por Latitude** - Gráfico de barras do equador aos polos
+- **6 Consequências da Rotação** - Dia/Noite, Efeito Coriolis, Correntes Oceânicas, Padrões de Ventos, Achatamento Polar, Campo Magnético
+- **Inclinação Axial e Estações** - Explicação detalhada com dados dos trópicos e círculos polares
+- **Evolução Histórica** - Timeline de 4,5 bilhões de anos até previsão futura (5 marcos)
+- **Efeito Coriolis Detalhado** - Fórmula física, aplicações práticas, mito do ralo desvendado
+- **6 Curiosidades Fascinantes** - Influência da Lua, Dias dos Dinossauros, Segundos Intercalares, etc.
+- **Vídeo Educativo** - Player YouTube incorporado com design destacado
+
+**Navegação e Rodapé**
+- Link para página anterior: Estrutura da Terra
+- Link para próxima página: Continentes
+- Rodapé institucional padrão
+
+#### Novo Componente
+- **PlanetEarthRotation3D.tsx** (`src/components/content/`) - Componente 3D reutilizável da Terra rotacionando
+
+### 🔧 Técnico
+
+- Importação dinâmica com `next/dynamic` e loading state
+- Textura da Terra via `useTexture` do Drei
+- Inclinação de 23,5° implementada com `rotation={[0.41, 0, 0]}`
+- Compatível com modo escuro
+- Responsivo (altura adaptativa mobile/desktop)
+
+---
+
+## [0.4.0-beta] - 2025-12-03
+
+### 🎨 Padronização de Navegação e Rodapé Institucional
+
+Esta versão padroniza os botões de navegação inferior e adiciona rodapé institucional consistente em todas as páginas do capítulo Planeta Terra.
+
+### ✨ Adicionado
+
+#### Rodapé Institucional
+- **Novo texto institucional** em todas as páginas:
+  - "Enciclopédia da Ciência 2025"
+  - "Conteúdo Feito com ❤️ e ☕ por Jhonnatan Luiz"
+- **Footer.tsx atualizado** - Componente global com novo texto institucional
+- **Rodapé inline** adicionado em páginas de subcapítulos (introdução, sistema-solar, estrutura-terra)
+
+#### Navegação Padronizada
+- **Estilo unificado** de botões de navegação conforme página `estrutura-terra`:
+  - Botão "Anterior": `bg-slate-800 hover:bg-slate-700` com ícone animado
+  - Botão "Próximo": `bg-gradient-to-r from-cyan-600 to-blue-600` com ícone animado
+- **Página Planeta Terra (index)** - Botões estilizados com gradiente, usando componente `<Link>`
+- **Página Introdução** - Navegação padronizada com `<Link>` e ícones `FaArrowLeft`/`FaArrowRight`
+- **Páginas Sistema Solar e Estrutura da Terra** - Rodapé institucional adicionado após navegação
+
+### 🔄 Modificado
+
+- **Footer.tsx** - Texto atualizado de "© 2025 - Todos os direitos reservados" para novo formato institucional
+- **planeta-terra/index.tsx** - Botões de navegação com estilo gradiente, removido rodapé duplicado (mantém apenas Footer global)
+- **introducao.tsx** - Botões estilizados conforme padrão `estrutura-terra`
+
+### 🐛 Corrigido
+
+- **Rodapé duplicado** removido da página `planeta-terra/index.tsx` (mantém apenas o `<Footer />` global)
+- **Links de navegação** convertidos de `<a>` para `<Link>` para melhor performance do Next.js
+
+### 🔧 Técnico
+
+- Responsividade mantida com classes `dark:text-gray-400` e `dark:text-blue-400`
+- Compatibilidade total com modo escuro
+- Animações de hover nos ícones de navegação (`group-hover:-translate-x-1` e `group-hover:translate-x-1`)
+
+---
+
 ## [0.3.0-beta] - 2025-12-02
 
 ### 🌍 Página Estrutura da Terra Completa + Integração Sketchfab

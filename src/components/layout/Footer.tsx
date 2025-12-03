@@ -50,7 +50,10 @@ export default function Footer() {
         {/* Copyright */}
         <div className="border-t border-gray-700 mt-8 pt-6 text-center">
           <p className="text-gray-400 text-sm">
-            Enciclopédia da Ciência © 2025 - Todos os direitos reservados
+            Enciclopédia da Ciência 2025
+          </p>
+          <p className="text-gray-400 text-sm mt-1">
+            Conteúdo Feito com ❤️ e ☕ por Jhonnatan Luiz
           </p>
         </div>
       </div>

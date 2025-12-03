@@ -182,23 +182,23 @@ export default function PlanetaTerra() {
         </section>
 
         {/* Navegação entre capítulos */}
-        <section className="max-w-5xl mx-auto px-4 py-10">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+        <section className="max-w-5xl mx-auto px-4 py-12">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 border-t border-gray-200 dark:border-slate-700/50 pt-8">
             <Link
               href="/sumario"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-medium rounded-xl border border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-colors shadow-md"
-              aria-label="Voltar ao sumário"
+              className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-all group"
             >
-              ← Voltar ao Sumário
+              <span className="group-hover:-translate-x-1 transition-transform">←</span>
+              Anterior: Sumário
             </Link>
 
             {proximoCapitulo && (
               <Link
                 href={`/capitulo/${proximoCapitulo.slug}`}
-                className={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${proximoCapitulo.cor} text-white font-medium rounded-xl hover:opacity-90 transition-opacity shadow-md`}
-                aria-label={`Ir para próximo capítulo: ${proximoCapitulo.titulo}`}
+                className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white transition-all group"
               >
-                {proximoCapitulo.icone} Próximo Capítulo: {proximoCapitulo.titulo} →
+                Próximo: {proximoCapitulo.titulo}
+                <span className="group-hover:translate-x-1 transition-transform">→</span>
               </Link>
             )}
           </div>

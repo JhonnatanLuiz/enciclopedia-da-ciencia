@@ -698,6 +698,12 @@ export default function EstruturaTerra() {
               <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
+
+          {/* Rodapé institucional */}
+          <footer className="mt-12 text-center text-sm text-gray-500 dark:text-gray-400">
+            <p>Enciclopédia da Ciência 2025</p>
+            <p>Conteúdo Feito com ❤️ e ☕ por Jhonnatan Luiz</p>
+          </footer>
         </section>
       </main>
     </>

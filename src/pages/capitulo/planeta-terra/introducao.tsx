@@ -820,41 +820,31 @@ export default function IntroducaoPlanetaTerra() {
         </section>
 
         {/* Navegação */}
-        <section className="py-16 px-4 border-t border-blue-500/20">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex flex-col sm:flex-row gap-4 justify-between">
-              <Link 
-                href="/capitulo/planeta-terra"
-                className="flex items-center gap-3 p-4 bg-slate-800/50 rounded-xl border border-slate-700/50 hover:border-blue-500/50 transition-colors group"
-              >
-                <FaArrowLeft className="text-blue-400 group-hover:-translate-x-1 transition-transform" />
-                <div>
-                  <div className="text-sm text-slate-500">Voltar</div>
-                  <div className="text-white">Capítulo: Planeta Terra</div>
-                </div>
-              </Link>
+        <section className="container mx-auto px-4 py-12">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 border-t border-slate-700/50 pt-8">
+            <Link
+              href="/capitulo/planeta-terra"
+              className="flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-gray-300 hover:text-white transition-all group"
+            >
+              <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
+              Anterior: Planeta Terra
+            </Link>
 
-              <Link 
-                href="/capitulo/planeta-terra/sistema-solar"
-                className="flex items-center gap-3 p-4 bg-slate-800/50 rounded-xl border border-slate-700/50 hover:border-blue-500/50 transition-colors group text-right sm:text-left"
-              >
-                <div className="order-2 sm:order-1">
-                  <div className="text-sm text-slate-500">Próximo</div>
-                  <div className="text-white">Sistema Solar</div>
-                </div>
-                <FaArrowRight className="text-blue-400 order-1 sm:order-2 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
+            <Link
+              href="/capitulo/planeta-terra/sistema-solar"
+              className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white transition-all group"
+            >
+              Próximo: Sistema Solar
+              <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+            </Link>
           </div>
+
+          {/* Rodapé institucional */}
+          <footer className="mt-12 text-center text-sm text-gray-500 dark:text-gray-400">
+            <p>Enciclopédia da Ciência 2025</p>
+            <p>Conteúdo Feito com ❤️ e ☕ por Jhonnatan Luiz</p>
+          </footer>
         </section>
-
-        {/* Footer */}
-        <footer className="py-8 px-4 border-t border-slate-800">
-          <div className="max-w-4xl mx-auto text-center text-slate-500 text-sm">
-            <p>Enciclopédia da Ciência © 2025</p>
-            <p className="mt-1">Fontes: NASA, ESA, USGS, NOAA</p>
-          </div>
-        </footer>
       </main>
     </>
   );
