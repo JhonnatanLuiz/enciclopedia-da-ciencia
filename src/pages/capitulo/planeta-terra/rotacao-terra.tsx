@@ -613,6 +613,35 @@ export default function RotacaoTerra() {
           </div>
         </section>
 
+        {/* Infográfico Educativo */}
+        <section className="container mx-auto px-4 py-12">
+          <div className="mb-8">
+            <h2 className="text-3xl font-bold text-white mb-4 flex items-center gap-3">
+              <span className="text-4xl">📋</span>
+              Infográfico Educativo
+            </h2>
+            <p className="text-slate-400 max-w-3xl">
+              Este infográfico resume os principais aspectos da rotação terrestre: velocidade, 
+              inclinação axial, efeitos e variações ao longo do tempo.
+            </p>
+          </div>
+
+          <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 rounded-2xl p-6 md:p-8 border border-slate-700/50">
+            <div className="flex justify-center">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/infograficos/Rotação da Terra infográfico.png"
+                alt="Infográfico A Terra em Movimento - Um Guia Rápido Sobre a Rotação do Planeta"
+                className="rounded-xl shadow-lg shadow-slate-900/50 max-w-full h-auto border border-slate-700/30"
+                loading="lazy"
+              />
+            </div>
+            <p className="text-sm text-center mt-4 text-slate-400">
+              Fonte: <span className="text-cyan-400">Enciclopédia da Ciência</span>
+            </p>
+          </div>
+        </section>
+
         {/* Vídeo Educativo */}
         <section className="container mx-auto px-4 py-12">
           <div className="bg-gradient-to-br from-red-900/20 via-slate-800/50 to-purple-900/20 rounded-2xl p-8 border border-red-500/20">
