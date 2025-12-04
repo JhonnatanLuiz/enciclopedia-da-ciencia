@@ -7,6 +7,44 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ---
 
+## [0.4.2-beta] - 2025-12-04
+
+### 🎠 Melhorias na Página Rotação da Terra
+
+Esta versão adiciona infográfico educativo, galeria de imagens com carousel e vídeo exclusivo do canal do YouTube.
+
+### ✨ Adicionado
+
+#### Infográfico Educativo
+- **Infográfico "A Terra em Movimento"** - Guia rápido sobre a rotação do planeta
+- Resumo visual de velocidade, inclinação axial, efeitos e variações
+- Layout consistente com a página estrutura-terra
+
+#### Galeria de Imagens com Carousel
+- **RotacaoTerraCarousel.tsx** - Novo componente de carousel com 15 imagens
+- Funcionalidades:
+  - Autoplay com transição a cada 5 segundos
+  - Botões Pausar/Reproduzir para controle da reprodução
+  - Navegação manual (Anterior/Próxima)
+  - Indicadores de pontos clicáveis
+  - Barra de progresso visual
+  - Controles responsivos para mobile e desktop
+- Seção "A Terra em Movimento" com jornada científica pela rotação
+
+#### Vídeo Exclusivo
+- **Novo vídeo do canal YouTube** substituindo o vídeo genérico
+- URL: `https://youtu.be/ukkaTKdnfw4`
+- Título atualizado para "Vídeo Exclusivo"
+
+### 🔧 Técnico
+
+- Novo componente: `src/components/ui/RotacaoTerraCarousel.tsx`
+- Importação do `FaBookOpen` para ícone da galeria
+- 15 imagens em `public/images/rotacao-terra/` (1.jpg a 15.jpg)
+- Infográfico em `public/images/infograficos/Rotação da Terra infográfico.png`
+
+---
+
 ## [0.4.1-beta] - 2025-12-03
 
 ### 🌍 Nova Página: Rotação da Terra + Visualização 3D

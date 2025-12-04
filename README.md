@@ -11,7 +11,7 @@
 
 **Uma enciclopédia científica interativa com 10 capítulos e 209 páginas de conteúdo**
 
-**🆕 Versão 0.4.0 Beta - Dezembro 2025**
+**🆕 Versão 0.4.2 Beta - Dezembro 2025**
 
 [🚀 Demo](#demo) • [📖 Documentação](#estrutura-do-projeto) • [🛠️ Instalação](#como-executar) • [📝 Changelog](./CHANGELOG.md)
 
