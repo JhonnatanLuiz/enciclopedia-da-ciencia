@@ -634,8 +634,8 @@ export default function RotacaoTerra() {
             <div className="relative w-full max-w-4xl mx-auto">
               <div className="aspect-video rounded-xl overflow-hidden shadow-2xl shadow-red-500/10 border border-slate-700/50">
                 <iframe
-                  src="https://www.youtube.com/embed/WgHmqv_-UbQ"
-                  title="Rotação da Terra - Vídeo Educativo"
+                  src="https://www.youtube.com/embed/ukkaTKdnfw4"
+                  title="Rotação da Terra - Vídeo Exclusivo"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                   className="w-full h-full"
@@ -646,7 +646,7 @@ export default function RotacaoTerra() {
             {/* Info adicional */}
             <div className="mt-8 flex flex-wrap justify-center gap-4 text-sm">
               <a 
-                href="https://youtu.be/WgHmqv_-UbQ" 
+                href="https://youtu.be/ukkaTKdnfw4" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-500 rounded-lg text-white transition-colors"

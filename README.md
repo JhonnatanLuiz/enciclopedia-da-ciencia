@@ -79,7 +79,6 @@ A **Enciclopédia da Ciência** é uma aplicação web moderna desenvolvida com 
 - [x] **Layout Principal** - Header, Sidebar e Footer responsivos
 - [x] **Navegação por Capítulos** - 10 capítulos com ícones e cores únicas
 - [x] **Modo Escuro/Claro** - Toggle com detecção de preferência do sistema
-- [x] **Átomo 2D Animado** - CSS animations com órbitas e elétrons
 - [x] **Átomo 3D Interativo** - Three.js com rotação 360° e OrbitControls
 - [x] **Terra 3D Interativa** - Modelo 3D do Planeta Terra com texturas realistas
 - [x] **Sistema Solar 3D** - Visualização interativa via Sketchfab embed
