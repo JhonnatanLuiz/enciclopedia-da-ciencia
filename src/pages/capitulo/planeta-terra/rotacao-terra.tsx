@@ -1,9 +1,10 @@
 import Head from "next/head";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { FaArrowLeft, FaArrowRight, FaClock, FaHistory } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight, FaClock, FaHistory, FaBookOpen } from "react-icons/fa";
 import { GiEarthAmerica, GiWindSlap, GiSunrise } from "react-icons/gi";
 import { MdRotateRight, MdSpeed } from "react-icons/md";
+import RotacaoTerraCarousel from "@/components/ui/RotacaoTerraCarousel";
 
 // Importação dinâmica do componente 3D (client-side only)
 const PlanetEarthRotation3D = dynamic(
@@ -690,6 +691,27 @@ export default function RotacaoTerra() {
               </span>
             </div>
           </div>
+        </section>
+
+        {/* Galeria de Imagens - Carousel */}
+        <section className="container mx-auto px-4 py-12">
+          <div className="mb-8">
+            <h2 className="text-3xl font-bold text-white mb-4 flex items-center gap-3">
+              <FaBookOpen className="text-emerald-400" />
+              A Terra em Movimento
+            </h2>
+            <p className="text-slate-400 max-w-3xl">
+              Uma jornada científica pela rotação terrestre. Navegue pelas imagens para 
+              explorar cada aspecto do movimento de rotação, desde os conceitos básicos 
+              até os efeitos e variações ao longo do tempo.
+            </p>
+          </div>
+
+          <RotacaoTerraCarousel />
+          
+          <p className="text-sm text-center mt-6 text-slate-500">
+            💡 Use os controles para navegar manualmente ou deixe em reprodução automática.
+          </p>
         </section>
 
         {/* Navegação */}
