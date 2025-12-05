@@ -209,3 +209,6 @@ export default function PlanetaTerra() {
     </div>
   );
 }
+
+// Desabilitar layout global (esta página tem layout próprio)
+PlanetaTerra.noLayout = true;

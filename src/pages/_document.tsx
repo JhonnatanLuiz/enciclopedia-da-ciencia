@@ -1,5 +1,17 @@
 import { Html, Head, Main, NextScript } from "next/document";
 
+// Script inline para aplicar tema antes da renderização (evita flash)
+const themeInitScript = `
+  (function() {
+    try {
+      var theme = localStorage.getItem('theme');
+      if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+    } catch (e) {}
+  })();
+`;
+
 export default function Document() {
   return (
     <Html lang="pt-BR">
@@ -24,6 +36,8 @@ export default function Document() {
         <meta name="apple-mobile-web-app-capable" content="yes" />
       </Head>
       <body className="antialiased">
+        {/* Script para aplicar tema ANTES da hidratação - evita flash de cor */}
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <Main />
         <NextScript />
       </body>

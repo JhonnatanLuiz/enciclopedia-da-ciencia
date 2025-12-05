@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { FaSun, FaGlobeAmericas, FaMoon, FaArrowLeft, FaArrowRight, FaExternalLinkAlt } from "react-icons/fa";
 import { GiMoonOrbit } from "react-icons/gi";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 
 // Dados dos planetas
 const planetas = [
@@ -266,54 +267,57 @@ export default function SistemaSolar() {
         />
       </Head>
 
-      <main className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
+      <main className="min-h-screen bg-gradient-to-b from-gray-50 via-gray-100 to-gray-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
         {/* Hero Section */}
         <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-[url('/textures/stars-bg.jpg')] opacity-20"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/50 to-slate-900"></div>
+          <div className="absolute inset-0 bg-[url('/textures/stars-bg.jpg')] opacity-5 dark:opacity-20"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-50/50 to-gray-50 dark:via-slate-900/50 dark:to-slate-900"></div>
 
           <div className="relative container mx-auto px-4 py-12">
             {/* Breadcrumb */}
-            <nav className="flex items-center gap-2 text-sm text-gray-400 mb-6">
-              <Link href="/" className="hover:text-cyan-400 transition-colors">Início</Link>
-              <span>/</span>
-              <Link href="/capitulo/planeta-terra" className="hover:text-cyan-400 transition-colors">Planeta Terra</Link>
-              <span>/</span>
-              <span className="text-cyan-400">Sistema Solar</span>
+            <nav className="flex items-center justify-between text-sm text-gray-600 dark:text-gray-400 mb-6">
+              <div className="flex items-center gap-2">
+                <Link href="/" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Início</Link>
+                <span>/</span>
+                <Link href="/capitulo/planeta-terra" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Planeta Terra</Link>
+                <span>/</span>
+                <span className="text-cyan-600 dark:text-cyan-400">Sistema Solar</span>
+              </div>
+              <ThemeToggle />
             </nav>
 
             {/* Título */}
             <div className="flex items-center gap-4 mb-6">
-              <div className="p-4 rounded-2xl bg-gradient-to-br from-yellow-500/20 to-orange-500/20 border border-yellow-500/30">
-                <FaSun className="text-4xl text-yellow-400" />
+              <div className="p-4 rounded-2xl bg-gradient-to-br from-yellow-300/40 to-orange-300/40 dark:from-yellow-500/20 dark:to-orange-500/20 border border-yellow-400/50 dark:border-yellow-500/30">
+                <FaSun className="text-4xl text-yellow-500 dark:text-yellow-400" />
               </div>
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold text-white">
+                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
                   Sistema Solar
                 </h1>
-                <p className="text-gray-400 mt-1">Capítulo: Planeta Terra</p>
+                <p className="text-gray-600 dark:text-gray-400 mt-1">Capítulo: Planeta Terra</p>
               </div>
             </div>
 
             {/* Introdução */}
-            <p className="text-xl text-gray-300 max-w-3xl leading-relaxed">
-              Explore o <span className="text-cyan-400 font-semibold">Sistema Solar</span>, 
+            <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl leading-relaxed">
+              Explore o <span className="text-cyan-600 dark:text-cyan-400 font-semibold">Sistema Solar</span>, 
               nossa vizinhança cósmica composta pelo Sol e todos os objetos que orbitam ao 
-              seu redor: <span className="text-yellow-400">8 planetas</span>, mais de 
-              <span className="text-purple-400"> 200 luas</span>, asteroides, cometas e muito mais.
+              seu redor: <span className="text-yellow-600 dark:text-yellow-400">8 planetas</span>, mais de 
+              <span className="text-purple-600 dark:text-purple-400"> 200 luas</span>, asteroides, cometas e muito mais.
             </p>
           </div>
         </section>
 
         {/* Visualização 3D */}
         <section className="container mx-auto px-4 py-8">
-          <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-            <GiMoonOrbit className="text-cyan-400" />
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
+            <GiMoonOrbit className="text-cyan-600 dark:text-cyan-400" />
             Visualização Interativa
           </h2>
           
           {/* Sketchfab Embed */}
-          <div className="relative rounded-2xl overflow-hidden bg-slate-900/50 border border-slate-700/50">
+          <div className="relative rounded-2xl overflow-hidden bg-gray-200/50 dark:bg-slate-900/50 border border-gray-300/50 dark:border-slate-700/50">
             <iframe
               title="Sistema Solar 3D - Modelo Interativo"
               src="https://sketchfab.com/models/f7896d085f474ef28631d88129268411/embed?autostart=1&ui_theme=dark&ui_infos=0&ui_watermark=0"
@@ -328,7 +332,7 @@ export default function SistemaSolar() {
                 href="https://sketchfab.com/3d-models/solar-system-f7896d085f474ef28631d88129268411"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-3 py-2 bg-slate-900/80 hover:bg-slate-800 backdrop-blur-sm rounded-lg text-sm text-gray-300 hover:text-cyan-400 transition-all border border-slate-700/50"
+                className="flex items-center gap-2 px-3 py-2 bg-gray-300/80 dark:bg-slate-900/80 hover:bg-gray-400 dark:hover:bg-slate-800 backdrop-blur-sm rounded-lg text-sm text-gray-700 dark:text-gray-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-all border border-gray-400/50 dark:border-slate-700/50"
               >
                 <FaExternalLinkAlt className="text-xs" />
                 Ver no Sketchfab
@@ -337,12 +341,12 @@ export default function SistemaSolar() {
           </div>
           
           {/* Instruções de interação */}
-          <div className="mt-4 flex flex-wrap justify-center gap-4 text-sm text-slate-400">
+          <div className="mt-4 flex flex-wrap justify-center gap-4 text-sm text-gray-600 dark:text-slate-400">
             <span className="flex items-center gap-2">
-              <span className="text-cyan-400">🖱️</span> Arraste para rotacionar
+              <span className="text-cyan-600 dark:text-cyan-400">🖱️</span> Arraste para rotacionar
             </span>
             <span className="flex items-center gap-2">
-              <span className="text-yellow-400">🔍</span> Scroll para zoom
+              <span className="text-yellow-600 dark:text-yellow-400">🔍</span> Scroll para zoom
             </span>
             <span className="flex items-center gap-2">
               <span className="text-purple-400">👆</span> Clique para explorar
@@ -353,7 +357,7 @@ export default function SistemaSolar() {
         {/* O Sol */}
         <section className="container mx-auto px-4 py-12">
           <div className="mb-8">
-            <h2 className="text-3xl font-bold text-white mb-4 flex items-center gap-3">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-3">
               <span className="text-4xl">☀️</span> O Sol: Nossa Estrela
             </h2>
           </div>
@@ -383,30 +387,30 @@ export default function SistemaSolar() {
 
           {/* Grid de dados do Sol */}
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="relative rounded-2xl overflow-hidden group bg-gradient-to-br from-yellow-900/30 to-orange-900/30 p-6 border border-yellow-500/20">
+            <div className="relative rounded-2xl overflow-hidden group bg-gradient-to-br from-yellow-200/50 to-orange-200/50 dark:from-yellow-900/30 dark:to-orange-900/30 p-6 border border-yellow-400/30 dark:border-yellow-500/20">
               <div className="flex items-center gap-2 mb-2">
-                <span className="px-2 py-1 bg-yellow-500/30 text-yellow-300 text-xs rounded-full">Tamanho</span>
+                <span className="px-2 py-1 bg-yellow-500/30 text-yellow-700 dark:text-yellow-300 text-xs rounded-full">Tamanho</span>
               </div>
-              <h3 className="text-xl font-bold text-white mb-1">Diâmetro</h3>
-              <p className="text-yellow-400 text-2xl font-bold">{dadosSol.diametro}</p>
-              <p className="text-slate-400 text-sm mt-2">109× maior que a Terra</p>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">Diâmetro</h3>
+              <p className="text-yellow-600 dark:text-yellow-400 text-2xl font-bold">{dadosSol.diametro}</p>
+              <p className="text-gray-600 dark:text-slate-400 text-sm mt-2">109× maior que a Terra</p>
             </div>
 
-            <div className="relative rounded-2xl overflow-hidden group bg-gradient-to-br from-orange-900/30 to-red-900/30 p-6 border border-orange-500/20">
+            <div className="relative rounded-2xl overflow-hidden group bg-gradient-to-br from-orange-200/50 to-red-200/50 dark:from-orange-900/30 dark:to-red-900/30 p-6 border border-orange-400/30 dark:border-orange-500/20">
               <div className="flex items-center gap-2 mb-2">
-                <span className="px-2 py-1 bg-orange-500/30 text-orange-300 text-xs rounded-full">Calor</span>
+                <span className="px-2 py-1 bg-orange-500/30 text-orange-700 dark:text-orange-300 text-xs rounded-full">Calor</span>
               </div>
-              <h3 className="text-xl font-bold text-white mb-1">Temperatura</h3>
-              <p className="text-orange-400 text-lg font-bold">{dadosSol.temperatura}</p>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">Temperatura</h3>
+              <p className="text-orange-600 dark:text-orange-400 text-lg font-bold">{dadosSol.temperatura}</p>
             </div>
 
-            <div className="relative rounded-2xl overflow-hidden group bg-gradient-to-br from-amber-900/30 to-yellow-900/30 p-6 border border-amber-500/20">
+            <div className="relative rounded-2xl overflow-hidden group bg-gradient-to-br from-amber-200/50 to-yellow-200/50 dark:from-amber-900/30 dark:to-yellow-900/30 p-6 border border-amber-400/30 dark:border-amber-500/20">
               <div className="flex items-center gap-2 mb-2">
-                <span className="px-2 py-1 bg-amber-500/30 text-amber-300 text-xs rounded-full">História</span>
+                <span className="px-2 py-1 bg-amber-500/30 text-amber-700 dark:text-amber-300 text-xs rounded-full">História</span>
               </div>
-              <h3 className="text-xl font-bold text-white mb-1">Idade</h3>
-              <p className="text-amber-400 text-2xl font-bold">{dadosSol.idade}</p>
-              <p className="text-slate-400 text-sm mt-2">Metade de sua vida</p>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">Idade</h3>
+              <p className="text-amber-600 dark:text-amber-400 text-2xl font-bold">{dadosSol.idade}</p>
+              <p className="text-gray-600 dark:text-slate-400 text-sm mt-2">Metade de sua vida</p>
             </div>
           </div>
         </section>
@@ -414,11 +418,11 @@ export default function SistemaSolar() {
         {/* Os 8 Planetas */}
         <section className="container mx-auto px-4 py-12">
           <div className="mb-8">
-            <h2 className="text-3xl font-bold text-white mb-4 flex items-center gap-3">
-              <FaGlobeAmericas className="text-blue-400" />
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-3">
+              <FaGlobeAmericas className="text-blue-600 dark:text-blue-400" />
               Os 8 Planetas
             </h2>
-            <p className="text-slate-400 max-w-3xl">
+            <p className="text-gray-600 dark:text-slate-400 max-w-3xl">
               Conheça os oito planetas do nosso Sistema Solar, desde os rochosos mais próximos 
               do Sol até os gigantes gasosos e de gelo nas regiões mais distantes.
             </p>
@@ -450,7 +454,7 @@ export default function SistemaSolar() {
                     }`}>
                       {planeta.tipo}
                     </span>
-                    <span className="px-2 py-1 bg-slate-500/30 text-slate-300 text-xs rounded-full">
+                    <span className="px-2 py-1 bg-gray-500/30 dark:bg-slate-500/30 text-gray-600 dark:text-slate-300 text-xs rounded-full">
                       {index + 1}º planeta
                     </span>
                   </div>
@@ -474,11 +478,11 @@ export default function SistemaSolar() {
         {/* Planetas Anões */}
         <section className="container mx-auto px-4 py-12">
           <div className="mb-8">
-            <h2 className="text-3xl font-bold text-white mb-4 flex items-center gap-3">
-              <FaMoon className="text-purple-400" />
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-3">
+              <FaMoon className="text-purple-600 dark:text-purple-400" />
               Os 5 Planetas Anões
             </h2>
-            <p className="text-slate-400 max-w-3xl">
+            <p className="text-gray-600 dark:text-slate-400 max-w-3xl">
               Desde 2006, a União Astronômica Internacional reconhece cinco planetas anões no Sistema Solar. 
               São corpos que orbitam o Sol e têm massa suficiente para forma esférica, mas não "limparam" 
               sua órbita de outros objetos.
@@ -556,11 +560,11 @@ export default function SistemaSolar() {
         {/* Cometas Famosos */}
         <section className="container mx-auto px-4 py-12">
           <div className="mb-8">
-            <h2 className="text-3xl font-bold text-white mb-4 flex items-center gap-3">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-3">
               <span className="text-4xl">☄️</span>
               Cometas Famosos
             </h2>
-            <p className="text-slate-400 max-w-3xl">
+            <p className="text-gray-600 dark:text-slate-400 max-w-3xl">
               Cometas são corpos compostos de gelo, poeira e rochas que desenvolvem caudas espetaculares 
               ao se aproximarem do Sol. A cauda sempre aponta para longe do Sol, 
               impulsionada pelo vento solar.
@@ -568,33 +572,33 @@ export default function SistemaSolar() {
           </div>
 
           {/* Comparação Halley vs Hale-Bopp */}
-          <div className="mb-10 bg-gradient-to-r from-indigo-900/30 to-purple-900/30 rounded-2xl p-6 border border-indigo-500/20">
-            <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+          <div className="mb-10 bg-gradient-to-r from-indigo-200/30 to-purple-200/30 dark:from-indigo-900/30 dark:to-purple-900/30 rounded-2xl p-6 border border-indigo-400/20 dark:border-indigo-500/20">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
               <span>⚖️</span> Halley vs Hale-Bopp: Qual a diferença?
             </h3>
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-slate-800/50 rounded-xl p-4">
-                <h4 className="text-lg font-semibold text-cyan-400 mb-2">☄️ Cometa Halley</h4>
-                <ul className="text-slate-300 text-sm space-y-2">
-                  <li>• <span className="text-yellow-400 font-semibold">Período curto:</span> retorna a cada ~76 anos</li>
-                  <li>• <span className="text-yellow-400 font-semibold">Tamanho:</span> núcleo de ~15 km × 8 km</li>
-                  <li>• <span className="text-yellow-400 font-semibold">Órbita:</span> vai até além de Netuno</li>
-                  <li>• <span className="text-yellow-400 font-semibold">Histórico:</span> documentado há mais de 2.000 anos</li>
-                  <li>• <span className="text-yellow-400 font-semibold">Próxima visita:</span> 2061</li>
+              <div className="bg-gray-200/50 dark:bg-slate-800/50 rounded-xl p-4">
+                <h4 className="text-lg font-semibold text-cyan-600 dark:text-cyan-400 mb-2">☄️ Cometa Halley</h4>
+                <ul className="text-gray-700 dark:text-slate-300 text-sm space-y-2">
+                  <li>• <span className="text-yellow-600 dark:text-yellow-400 font-semibold">Período curto:</span> retorna a cada ~76 anos</li>
+                  <li>• <span className="text-yellow-600 dark:text-yellow-400 font-semibold">Tamanho:</span> núcleo de ~15 km × 8 km</li>
+                  <li>• <span className="text-yellow-600 dark:text-yellow-400 font-semibold">Órbita:</span> vai até além de Netuno</li>
+                  <li>• <span className="text-yellow-600 dark:text-yellow-400 font-semibold">Histórico:</span> documentado há mais de 2.000 anos</li>
+                  <li>• <span className="text-yellow-600 dark:text-yellow-400 font-semibold">Próxima visita:</span> 2061</li>
                 </ul>
               </div>
-              <div className="bg-slate-800/50 rounded-xl p-4">
-                <h4 className="text-lg font-semibold text-purple-400 mb-2">💫 Cometa Hale-Bopp</h4>
-                <ul className="text-slate-300 text-sm space-y-2">
-                  <li>• <span className="text-pink-400 font-semibold">Período longo:</span> retorna a cada ~2.533 anos</li>
-                  <li>• <span className="text-pink-400 font-semibold">Tamanho:</span> núcleo de ~40 km (muito maior!)</li>
-                  <li>• <span className="text-pink-400 font-semibold">Órbita:</span> vai até quase 400 UA do Sol</li>
-                  <li>• <span className="text-pink-400 font-semibold">Histórico:</span> descoberto em 1995</li>
-                  <li>• <span className="text-pink-400 font-semibold">Próxima visita:</span> por volta de 4530</li>
+              <div className="bg-gray-200/50 dark:bg-slate-800/50 rounded-xl p-4">
+                <h4 className="text-lg font-semibold text-purple-600 dark:text-purple-400 mb-2">💫 Cometa Hale-Bopp</h4>
+                <ul className="text-gray-700 dark:text-slate-300 text-sm space-y-2">
+                  <li>• <span className="text-pink-600 dark:text-pink-400 font-semibold">Período longo:</span> retorna a cada ~2.533 anos</li>
+                  <li>• <span className="text-pink-600 dark:text-pink-400 font-semibold">Tamanho:</span> núcleo de ~40 km (muito maior!)</li>
+                  <li>• <span className="text-pink-600 dark:text-pink-400 font-semibold">Órbita:</span> vai até quase 400 UA do Sol</li>
+                  <li>• <span className="text-pink-600 dark:text-pink-400 font-semibold">Histórico:</span> descoberto em 1995</li>
+                  <li>• <span className="text-pink-600 dark:text-pink-400 font-semibold">Próxima visita:</span> por volta de 4530</li>
                 </ul>
               </div>
             </div>
-            <p className="text-slate-400 text-sm mt-4 italic">
+            <p className="text-gray-500 dark:text-slate-400 text-sm mt-4 italic">
               💡 Hale-Bopp é quase 3× maior que Halley e foi um dos cometas mais brilhantes do século XX, 
               visível a olho nu por 18 meses! Já Halley é o mais famoso por seu retorno "frequente", 
               permitindo que várias gerações o observem.
@@ -649,12 +653,12 @@ export default function SistemaSolar() {
         {/* Satélites Naturais (Luas) */}
         <section className="container mx-auto px-4 py-12">
           <div className="mb-8">
-            <h2 className="text-3xl font-bold text-white mb-4 flex items-center gap-3">
-              <FaMoon className="text-gray-300" />
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-3">
+              <FaMoon className="text-gray-600 dark:text-gray-300" />
               Satélites Naturais
             </h2>
-            <p className="text-slate-400 max-w-3xl">
-              O Sistema Solar possui mais de <span className="text-cyan-400 font-semibold">200 luas</span> conhecidas! 
+            <p className="text-gray-600 dark:text-slate-400 max-w-3xl">
+              O Sistema Solar possui mais de <span className="text-cyan-600 dark:text-cyan-400 font-semibold">200 luas</span> conhecidas! 
               Estes satélites naturais orbitam planetas e até alguns asteroides. Conheça as 10 luas 
               mais fascinantes, organizadas por seus planetas.
             </p>
@@ -665,7 +669,7 @@ export default function SistemaSolar() {
             {satelitesNaturais.map((satelite) => (
               <div 
                 key={satelite.nome}
-                className="relative rounded-xl overflow-hidden group bg-slate-800/50 border border-slate-700/50 hover:border-cyan-500/50 transition-all"
+                className="relative rounded-xl overflow-hidden group bg-gray-200/50 dark:bg-slate-800/50 border border-gray-300/50 dark:border-slate-700/50 hover:border-cyan-500/50 transition-all"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
@@ -674,7 +678,7 @@ export default function SistemaSolar() {
                   className="w-full h-[120px] object-cover group-hover:scale-110 transition-transform duration-500"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 dark:from-slate-900 via-gray-900/30 dark:via-slate-900/30 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-3">
                   <span className={`px-2 py-0.5 text-[10px] rounded-full mb-1 inline-block ${
                     satelite.planeta === "Terra" ? "bg-blue-500/30 text-blue-300" :
@@ -689,16 +693,16 @@ export default function SistemaSolar() {
                     <span className="text-xs">{satelite.icon}</span>
                     {satelite.nome}
                   </h3>
-                  <p className="text-[10px] text-slate-400">⌀ {satelite.diametro}</p>
+                  <p className="text-[10px] text-gray-400 dark:text-slate-400">⌀ {satelite.diametro}</p>
                 </div>
                 
                 {/* Tooltip no hover */}
-                <div className="absolute inset-0 bg-slate-900/95 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-3 flex flex-col justify-center">
+                <div className="absolute inset-0 bg-gray-900/95 dark:bg-slate-900/95 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-3 flex flex-col justify-center">
                   <h4 className="text-sm font-bold text-white mb-1 flex items-center gap-1">
                     <span>{satelite.icon}</span> {satelite.nome}
                   </h4>
                   <p className="text-[10px] text-cyan-400 mb-2">{satelite.planeta} • {satelite.diametro}</p>
-                  <p className="text-[11px] text-slate-300 leading-relaxed">
+                  <p className="text-[11px] text-gray-300 dark:text-slate-300 leading-relaxed">
                     {satelite.curiosidade}
                   </p>
                 </div>
@@ -709,16 +713,16 @@ export default function SistemaSolar() {
 
         {/* Vídeo Exclusivo */}
         <section className="container mx-auto px-4 py-12">
-          <div className="bg-gradient-to-br from-red-900/20 via-slate-800/50 to-purple-900/20 rounded-2xl p-8 border border-red-500/20">
+          <div className="bg-gradient-to-br from-red-200/20 via-gray-200/50 to-purple-200/20 dark:from-red-900/20 dark:via-slate-800/50 dark:to-purple-900/20 rounded-2xl p-8 border border-red-400/20 dark:border-red-500/20">
             <div className="text-center mb-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-500/20 rounded-full text-red-400 text-sm mb-4">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-500/20 rounded-full text-red-600 dark:text-red-400 text-sm mb-4">
                 <span className="animate-pulse">🔴</span> Vídeo Exclusivo
               </div>
-              <h2 className="text-3xl font-bold text-white mb-4 flex items-center justify-center gap-3">
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 flex items-center justify-center gap-3">
                 <span className="text-4xl">🎬</span>
                 Explore o Sistema Solar em Vídeo
               </h2>
-              <p className="text-slate-400 max-w-2xl mx-auto">
+              <p className="text-gray-600 dark:text-slate-400 max-w-2xl mx-auto">
                 Preparamos um vídeo especial para complementar seu aprendizado! 
                 Uma jornada visual pelos planetas, luas e outros objetos do nosso Sistema Solar.
               </p>
@@ -750,7 +754,7 @@ export default function SistemaSolar() {
                 </svg>
                 Assistir no YouTube
               </a>
-              <span className="flex items-center gap-2 px-4 py-2 bg-slate-700/50 rounded-lg text-slate-300">
+              <span className="flex items-center gap-2 px-4 py-2 bg-gray-300/50 dark:bg-slate-700/50 rounded-lg text-gray-700 dark:text-slate-300">
                 <span>📺</span> Feito especialmente para a Enciclopédia da Ciência
               </span>
             </div>
@@ -760,11 +764,11 @@ export default function SistemaSolar() {
         {/* Dados Científicos Expandidos */}
         <section className="container mx-auto px-4 py-12">
           <div className="mb-8">
-            <h2 className="text-3xl font-bold text-white mb-4 flex items-center gap-3">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-3">
               <span className="text-4xl">📊</span>
               Dados Científicos & Curiosidades
             </h2>
-            <p className="text-slate-400 max-w-3xl">
+            <p className="text-gray-600 dark:text-slate-400 max-w-3xl">
               Números impressionantes e fatos fascinantes sobre nossa vizinhança cósmica. 
               O Sistema Solar é um lugar cheio de extremos e surpresas!
             </p>
@@ -772,104 +776,104 @@ export default function SistemaSolar() {
 
           {/* Estatísticas principais */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            <div className="bg-gradient-to-br from-cyan-900/30 to-blue-900/30 rounded-2xl p-6 border border-cyan-500/20 text-center">
-              <p className="text-4xl font-bold text-cyan-400">4,6</p>
-              <p className="text-gray-400 text-sm">Bilhões de anos</p>
-              <p className="text-cyan-300 text-xs mt-1">Idade do Sistema Solar</p>
+            <div className="bg-gradient-to-br from-cyan-200/50 to-blue-200/50 dark:from-cyan-900/30 dark:to-blue-900/30 rounded-2xl p-6 border border-cyan-400/30 dark:border-cyan-500/20 text-center">
+              <p className="text-4xl font-bold text-cyan-600 dark:text-cyan-400">4,6</p>
+              <p className="text-gray-600 dark:text-gray-400 text-sm">Bilhões de anos</p>
+              <p className="text-cyan-700 dark:text-cyan-300 text-xs mt-1">Idade do Sistema Solar</p>
             </div>
-            <div className="bg-gradient-to-br from-yellow-900/30 to-orange-900/30 rounded-2xl p-6 border border-yellow-500/20 text-center">
-              <p className="text-4xl font-bold text-yellow-400">99,86%</p>
-              <p className="text-gray-400 text-sm">Massa no Sol</p>
-              <p className="text-yellow-300 text-xs mt-1">O Sol domina tudo!</p>
+            <div className="bg-gradient-to-br from-yellow-200/50 to-orange-200/50 dark:from-yellow-900/30 dark:to-orange-900/30 rounded-2xl p-6 border border-yellow-400/30 dark:border-yellow-500/20 text-center">
+              <p className="text-4xl font-bold text-yellow-600 dark:text-yellow-400">99,86%</p>
+              <p className="text-gray-600 dark:text-gray-400 text-sm">Massa no Sol</p>
+              <p className="text-yellow-700 dark:text-yellow-300 text-xs mt-1">O Sol domina tudo!</p>
             </div>
-            <div className="bg-gradient-to-br from-purple-900/30 to-pink-900/30 rounded-2xl p-6 border border-purple-500/20 text-center">
-              <p className="text-4xl font-bold text-purple-400">200+</p>
-              <p className="text-gray-400 text-sm">Luas conhecidas</p>
-              <p className="text-purple-300 text-xs mt-1">E descobrindo mais!</p>
+            <div className="bg-gradient-to-br from-purple-200/50 to-pink-200/50 dark:from-purple-900/30 dark:to-pink-900/30 rounded-2xl p-6 border border-purple-400/30 dark:border-purple-500/20 text-center">
+              <p className="text-4xl font-bold text-purple-600 dark:text-purple-400">200+</p>
+              <p className="text-gray-600 dark:text-gray-400 text-sm">Luas conhecidas</p>
+              <p className="text-purple-700 dark:text-purple-300 text-xs mt-1">E descobrindo mais!</p>
             </div>
-            <div className="bg-gradient-to-br from-green-900/30 to-emerald-900/30 rounded-2xl p-6 border border-green-500/20 text-center">
-              <p className="text-4xl font-bold text-green-400">1M+</p>
-              <p className="text-gray-400 text-sm">Asteroides catalogados</p>
-              <p className="text-green-300 text-xs mt-1">No cinturão principal</p>
+            <div className="bg-gradient-to-br from-green-200/50 to-emerald-200/50 dark:from-green-900/30 dark:to-emerald-900/30 rounded-2xl p-6 border border-green-400/30 dark:border-green-500/20 text-center">
+              <p className="text-4xl font-bold text-green-600 dark:text-green-400">1M+</p>
+              <p className="text-gray-600 dark:text-gray-400 text-sm">Asteroides catalogados</p>
+              <p className="text-green-700 dark:text-green-300 text-xs mt-1">No cinturão principal</p>
             </div>
           </div>
 
           {/* Curiosidades em cards */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            <div className="bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50 hover:border-cyan-500/30 transition-colors">
+            <div className="bg-gray-200/50 dark:bg-slate-800/50 rounded-2xl p-6 border border-gray-300/50 dark:border-slate-700/50 hover:border-cyan-500/30 transition-colors">
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-3xl">🚀</span>
-                <h3 className="text-lg font-bold text-white">Velocidade Orbital</h3>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white">Velocidade Orbital</h3>
               </div>
-              <p className="text-slate-300 text-sm leading-relaxed">
-                A Terra viaja a <span className="text-cyan-400 font-semibold">107.000 km/h</span> ao redor do Sol! 
-                Completamos uma órbita de <span className="text-yellow-400">940 milhões de km</span> a cada ano.
+              <p className="text-gray-700 dark:text-slate-300 text-sm leading-relaxed">
+                A Terra viaja a <span className="text-cyan-600 dark:text-cyan-400 font-semibold">107.000 km/h</span> ao redor do Sol! 
+                Completamos uma órbita de <span className="text-yellow-600 dark:text-yellow-400">940 milhões de km</span> a cada ano.
               </p>
             </div>
 
-            <div className="bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50 hover:border-yellow-500/30 transition-colors">
+            <div className="bg-gray-200/50 dark:bg-slate-800/50 rounded-2xl p-6 border border-gray-300/50 dark:border-slate-700/50 hover:border-yellow-500/30 transition-colors">
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-3xl">☀️</span>
-                <h3 className="text-lg font-bold text-white">Energia do Sol</h3>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white">Energia do Sol</h3>
               </div>
-              <p className="text-slate-300 text-sm leading-relaxed">
-                O Sol converte <span className="text-yellow-400 font-semibold">600 milhões de toneladas</span> de 
+              <p className="text-gray-700 dark:text-slate-300 text-sm leading-relaxed">
+                O Sol converte <span className="text-yellow-600 dark:text-yellow-400 font-semibold">600 milhões de toneladas</span> de 
                 hidrogênio em hélio por segundo! A energia liberada equivale a 
-                <span className="text-orange-400"> bilhões de bombas nucleares</span>.
+                <span className="text-orange-600 dark:text-orange-400"> bilhões de bombas nucleares</span>.
               </p>
             </div>
 
-            <div className="bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50 hover:border-purple-500/30 transition-colors">
+            <div className="bg-gray-200/50 dark:bg-slate-800/50 rounded-2xl p-6 border border-gray-300/50 dark:border-slate-700/50 hover:border-purple-500/30 transition-colors">
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-3xl">🌌</span>
-                <h3 className="text-lg font-bold text-white">Nuvem de Oort</h3>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white">Nuvem de Oort</h3>
               </div>
-              <p className="text-slate-300 text-sm leading-relaxed">
-                O Sistema Solar se estende até a <span className="text-purple-400 font-semibold">Nuvem de Oort</span>, 
-                a quase <span className="text-cyan-400">2 anos-luz</span> do Sol - 
+              <p className="text-gray-700 dark:text-slate-300 text-sm leading-relaxed">
+                O Sistema Solar se estende até a <span className="text-purple-600 dark:text-purple-400 font-semibold">Nuvem de Oort</span>, 
+                a quase <span className="text-cyan-600 dark:text-cyan-400">2 anos-luz</span> do Sol - 
                 quase metade do caminho até a estrela mais próxima!
               </p>
             </div>
 
-            <div className="bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50 hover:border-orange-500/30 transition-colors">
+            <div className="bg-gray-200/50 dark:bg-slate-800/50 rounded-2xl p-6 border border-gray-300/50 dark:border-slate-700/50 hover:border-orange-500/30 transition-colors">
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-3xl">🪐</span>
-                <h3 className="text-lg font-bold text-white">Júpiter Protetor</h3>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white">Júpiter Protetor</h3>
               </div>
-              <p className="text-slate-300 text-sm leading-relaxed">
-                Júpiter age como um <span className="text-orange-400 font-semibold">"aspirador cósmico"</span>, 
+              <p className="text-gray-700 dark:text-slate-300 text-sm leading-relaxed">
+                Júpiter age como um <span className="text-orange-600 dark:text-orange-400 font-semibold">"aspirador cósmico"</span>, 
                 sua gravidade atrai asteroides e cometas que poderiam atingir a Terra. 
                 Ele nos protege há bilhões de anos!
               </p>
             </div>
 
-            <div className="bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50 hover:border-blue-500/30 transition-colors">
+            <div className="bg-gray-200/50 dark:bg-slate-800/50 rounded-2xl p-6 border border-gray-300/50 dark:border-slate-700/50 hover:border-blue-500/30 transition-colors">
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-3xl">💧</span>
-                <h3 className="text-lg font-bold text-white">Água no Espaço</h3>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white">Água no Espaço</h3>
               </div>
-              <p className="text-slate-300 text-sm leading-relaxed">
-                <span className="text-blue-400 font-semibold">Europa (lua de Júpiter)</span> tem mais água que 
+              <p className="text-gray-700 dark:text-slate-300 text-sm leading-relaxed">
+                <span className="text-blue-600 dark:text-blue-400 font-semibold">Europa (lua de Júpiter)</span> tem mais água que 
                 todos os oceanos da Terra juntos! O Sistema Solar contém mais água do que imaginávamos.
               </p>
             </div>
 
-            <div className="bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50 hover:border-red-500/30 transition-colors">
+            <div className="bg-gray-200/50 dark:bg-slate-800/50 rounded-2xl p-6 border border-gray-300/50 dark:border-slate-700/50 hover:border-red-500/30 transition-colors">
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-3xl">🌡️</span>
-                <h3 className="text-lg font-bold text-white">Extremos de Temperatura</h3>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white">Extremos de Temperatura</h3>
               </div>
-              <p className="text-slate-300 text-sm leading-relaxed">
-                De <span className="text-red-400 font-semibold">+465°C</span> em Vênus a 
-                <span className="text-blue-400 font-semibold"> -224°C</span> em Netuno! 
-                Uma diferença de quase <span className="text-yellow-400">700 graus</span> entre os extremos.
+              <p className="text-gray-700 dark:text-slate-300 text-sm leading-relaxed">
+                De <span className="text-red-600 dark:text-red-400 font-semibold">+465°C</span> em Vênus a 
+                <span className="text-blue-600 dark:text-blue-400 font-semibold"> -224°C</span> em Netuno! 
+                Uma diferença de quase <span className="text-yellow-600 dark:text-yellow-400">700 graus</span> entre os extremos.
               </p>
             </div>
           </div>
 
           {/* Comparações de escala */}
-          <div className="bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-8 border border-slate-700/50">
-            <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+          <div className="bg-gradient-to-r from-gray-200 to-gray-300 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-8 border border-gray-300/50 dark:border-slate-700/50">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
               <span>📏</span> Comparações de Escala
             </h3>
             
@@ -878,15 +882,15 @@ export default function SistemaSolar() {
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-16 rounded-full bg-yellow-500/20 flex items-center justify-center text-2xl">☀️</div>
                   <div>
-                    <p className="text-white font-semibold">Se o Sol fosse uma bola de basquete...</p>
-                    <p className="text-slate-400 text-sm">A Terra seria do tamanho de uma cabeça de alfinete a 26 metros de distância!</p>
+                    <p className="text-gray-900 dark:text-white font-semibold">Se o Sol fosse uma bola de basquete...</p>
+                    <p className="text-gray-600 dark:text-slate-400 text-sm">A Terra seria do tamanho de uma cabeça de alfinete a 26 metros de distância!</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-16 rounded-full bg-orange-500/20 flex items-center justify-center text-2xl">🪐</div>
                   <div>
-                    <p className="text-white font-semibold">Júpiter é tão grande...</p>
-                    <p className="text-slate-400 text-sm">Que <span className="text-orange-400">1.300 Terras</span> caberiam dentro dele!</p>
+                    <p className="text-gray-900 dark:text-white font-semibold">Júpiter é tão grande...</p>
+                    <p className="text-gray-600 dark:text-slate-400 text-sm">Que <span className="text-orange-600 dark:text-orange-400">1.300 Terras</span> caberiam dentro dele!</p>
                   </div>
                 </div>
               </div>
@@ -895,15 +899,15 @@ export default function SistemaSolar() {
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-16 rounded-full bg-cyan-500/20 flex items-center justify-center text-2xl">🌊</div>
                   <div>
-                    <p className="text-white font-semibold">Se você pudesse dirigir até o Sol...</p>
-                    <p className="text-slate-400 text-sm">A 100 km/h, levaria <span className="text-cyan-400">170 anos</span> para chegar!</p>
+                    <p className="text-gray-900 dark:text-white font-semibold">Se você pudesse dirigir até o Sol...</p>
+                    <p className="text-gray-600 dark:text-slate-400 text-sm">A 100 km/h, levaria <span className="text-cyan-600 dark:text-cyan-400">170 anos</span> para chegar!</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center text-2xl">✨</div>
                   <div>
-                    <p className="text-white font-semibold">A luz do Sol...</p>
-                    <p className="text-slate-400 text-sm">Leva <span className="text-purple-400">8 min 20 seg</span> para chegar à Terra, mas <span className="text-pink-400">4 horas</span> até Netuno!</p>
+                    <p className="text-gray-900 dark:text-white font-semibold">A luz do Sol...</p>
+                    <p className="text-gray-600 dark:text-slate-400 text-sm">Leva <span className="text-purple-600 dark:text-purple-400">8 min 20 seg</span> para chegar à Terra, mas <span className="text-pink-600 dark:text-pink-400">4 horas</span> até Netuno!</p>
                   </div>
                 </div>
               </div>
@@ -912,39 +916,39 @@ export default function SistemaSolar() {
 
           {/* Recordes do Sistema Solar */}
           <div className="mt-8 grid md:grid-cols-4 gap-4">
-            <div className="bg-slate-800/30 rounded-xl p-4 text-center border border-slate-700/30">
+            <div className="bg-gray-200/30 dark:bg-slate-800/30 rounded-xl p-4 text-center border border-gray-300/30 dark:border-slate-700/30">
               <span className="text-2xl">🏆</span>
-              <p className="text-yellow-400 font-bold mt-2">Maior Vulcão</p>
-              <p className="text-white text-lg">Monte Olimpo</p>
-              <p className="text-slate-400 text-xs">Marte - 21 km de altura</p>
+              <p className="text-yellow-600 dark:text-yellow-400 font-bold mt-2">Maior Vulcão</p>
+              <p className="text-gray-900 dark:text-white text-lg">Monte Olimpo</p>
+              <p className="text-gray-600 dark:text-slate-400 text-xs">Marte - 21 km de altura</p>
             </div>
-            <div className="bg-slate-800/30 rounded-xl p-4 text-center border border-slate-700/30">
+            <div className="bg-gray-200/30 dark:bg-slate-800/30 rounded-xl p-4 text-center border border-gray-300/30 dark:border-slate-700/30">
               <span className="text-2xl">🌪️</span>
-              <p className="text-red-400 font-bold mt-2">Maior Tempestade</p>
-              <p className="text-white text-lg">Grande Mancha</p>
-              <p className="text-slate-400 text-xs">Júpiter - maior que a Terra</p>
+              <p className="text-red-600 dark:text-red-400 font-bold mt-2">Maior Tempestade</p>
+              <p className="text-gray-900 dark:text-white text-lg">Grande Mancha</p>
+              <p className="text-gray-600 dark:text-slate-400 text-xs">Júpiter - maior que a Terra</p>
             </div>
-            <div className="bg-slate-800/30 rounded-xl p-4 text-center border border-slate-700/30">
+            <div className="bg-gray-200/30 dark:bg-slate-800/30 rounded-xl p-4 text-center border border-gray-300/30 dark:border-slate-700/30">
               <span className="text-2xl">💨</span>
-              <p className="text-cyan-400 font-bold mt-2">Ventos Mais Fortes</p>
-              <p className="text-white text-lg">2.100 km/h</p>
-              <p className="text-slate-400 text-xs">Netuno</p>
+              <p className="text-cyan-600 dark:text-cyan-400 font-bold mt-2">Ventos Mais Fortes</p>
+              <p className="text-gray-900 dark:text-white text-lg">2.100 km/h</p>
+              <p className="text-gray-600 dark:text-slate-400 text-xs">Netuno</p>
             </div>
-            <div className="bg-slate-800/30 rounded-xl p-4 text-center border border-slate-700/30">
+            <div className="bg-gray-200/30 dark:bg-slate-800/30 rounded-xl p-4 text-center border border-gray-300/30 dark:border-slate-700/30">
               <span className="text-2xl">💎</span>
-              <p className="text-purple-400 font-bold mt-2">Chuva de Diamantes</p>
-              <p className="text-white text-lg">Urano e Netuno</p>
-              <p className="text-slate-400 text-xs">Diamantes reais!</p>
+              <p className="text-purple-600 dark:text-purple-400 font-bold mt-2">Chuva de Diamantes</p>
+              <p className="text-gray-900 dark:text-white text-lg">Urano e Netuno</p>
+              <p className="text-gray-600 dark:text-slate-400 text-xs">Diamantes reais!</p>
             </div>
           </div>
         </section>
 
         {/* Navegação */}
         <section className="container mx-auto px-4 py-12">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 border-t border-slate-700/50 pt-8">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 border-t border-gray-300/50 dark:border-slate-700/50 pt-8">
             <Link
               href="/capitulo/planeta-terra/introducao"
-              className="flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-gray-300 hover:text-white transition-all group"
+              className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gray-200 hover:bg-gray-300 dark:bg-slate-800 dark:hover:bg-slate-700 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-all group"
             >
               <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
               Anterior: Introdução
@@ -961,7 +965,7 @@ export default function SistemaSolar() {
 
           {/* Rodapé institucional */}
           <footer className="mt-12 text-center text-sm text-gray-500 dark:text-gray-400">
-            <p>Enciclopédia da Ciência 2025</p>
+            <p>Enciclopédia da Ciência © 2025 - Todos os direitos reservados</p>
             <p>Conteúdo Feito com ❤️ e ☕ por Jhonnatan Luiz</p>
           </footer>
         </section>
@@ -969,3 +973,6 @@ export default function SistemaSolar() {
     </>
   );
 }
+
+// Desabilitar layout global (esta página tem layout próprio)
+SistemaSolar.noLayout = true;

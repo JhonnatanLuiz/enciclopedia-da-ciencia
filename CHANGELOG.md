@@ -7,6 +7,99 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ---
 
+## [0.4.3-beta] - 2025-12-05
+
+### 🎨 Correção de Visibilidade Light/Dark Mode
+
+Esta versão corrige problemas de visibilidade de elementos em modo claro (light mode) em todas as páginas do capítulo Planeta Terra, e estabelece padrões de cores para desenvolvimento futuro.
+
+### ✨ Adicionado
+
+#### Documentação de Padrões de Cores
+- **docs/THEME-PATTERNS.md** - Novo documento de referência completo
+- Padrões de cores para textos (títulos, corpo, secundário, acentuados)
+- Padrões de gradientes para cards de dados
+- Padrões de bordas e fundos
+- Tabelas de referência rápida para todas as cores
+- Exemplos práticos de implementação
+- Checklist de revisão para novas páginas
+- Lista de erros comuns a evitar
+
+### 🔧 Corrigido
+
+#### Página `rotacao-terra.tsx`
+- **Cards "Consequências da Rotação"** - Títulos e descrições agora visíveis em light mode
+  - Títulos: `text-gray-900 dark:text-white` (era `text-white`)
+  - Descrições: `text-gray-700 dark:text-slate-300` (era `text-slate-300`)
+- **Cards de Dados Científicos** - Valores e labels corrigidos
+  - Valores: `text-cyan-600 dark:text-cyan-400` (era `text-cyan-400`)
+  - Labels: `text-gray-900 dark:text-white` (era `text-white`)
+- **Gradientes** - Adicionadas variantes light mode
+  - `from-amber-300/40 dark:from-amber-500/20` (era apenas dark)
+- **Ponto da timeline** - `bg-gray-800 dark:bg-slate-900`
+
+#### Página `estrutura-terra.tsx`
+- **Seção "Geodínamo"** - Container e textos corrigidos
+  - Container: `bg-gray-200/60 dark:bg-slate-800/60`
+  - Texto: `text-gray-700 dark:text-slate-300`
+- **Cards de Dados Científicos** - Gradientes e cores corrigidos
+- **Gradientes dos Cards de Camadas** - Escurecidos para melhor contraste
+  - Núcleo Externo: `from-yellow-600 to-amber-800`
+  - Núcleo Interno: `from-red-600 to-orange-700`
+- **Diagrama de Profundidade** - Texto do Núcleo Externo agora `text-gray-900`
+- **Badge do Hero** - Adicionado gradiente light mode
+
+#### Página `sistema-solar.tsx`
+- **Sketchfab Embed** - `bg-gray-200/50 dark:bg-slate-900/50`
+- **Link Externo** - Cores light mode adicionadas
+- **Cards do Sol** - Títulos, valores e descrições corrigidos
+- **Cards de Estatísticas** - Todos os 4 cards corrigidos
+- **Cards de Recordes** - Corrigidos backgrounds e textos
+- **Cards de Satélites** - Overlays e tooltips corrigidos
+
+#### Página `continentes.tsx`
+- **Dados dos Continentes** - textCor, bgCor, borderCor de todos os 6 continentes
+  - África: `text-amber-600 dark:text-amber-400`
+  - América: `text-emerald-600 dark:text-emerald-400`
+  - Ásia: `text-red-600 dark:text-red-400`
+  - Europa: `text-blue-600 dark:text-blue-400`
+  - Oceania: `text-cyan-600 dark:text-cyan-400`
+  - Antártida: `text-slate-600 dark:text-slate-300`
+- **Gradientes dos Continentes** - Variantes light mode adicionadas
+- **Dados Globais** - 4 cards de estatísticas corrigidos
+
+### 📋 Padrões Estabelecidos
+
+#### Cores de Texto
+| Uso | Light Mode | Dark Mode |
+|-----|------------|-----------|
+| Título | `text-gray-900` | `dark:text-white` |
+| Corpo | `text-gray-700` | `dark:text-slate-300` |
+| Secundário | `text-gray-600` | `dark:text-slate-400` |
+| Acentuado | `text-[cor]-600` | `dark:text-[cor]-400` |
+
+#### Gradientes de Cards
+| Light Mode | Dark Mode |
+|------------|-----------|
+| `from-[cor]-200/50 to-[cor2]-200/50` | `dark:from-[cor]-900/30 dark:to-[cor2]-900/30` |
+
+#### Fundos
+| Uso | Light Mode | Dark Mode |
+|-----|------------|-----------|
+| Card | `bg-gray-200/60` | `dark:bg-slate-800/60` |
+| Seção | `bg-gray-200/50` | `dark:bg-slate-800/30` |
+
+### 🔧 Técnico
+
+- Novo arquivo: `docs/THEME-PATTERNS.md`
+- Arquivos modificados:
+  - `src/pages/capitulo/planeta-terra/rotacao-terra.tsx`
+  - `src/pages/capitulo/planeta-terra/estrutura-terra.tsx`
+  - `src/pages/capitulo/planeta-terra/sistema-solar.tsx`
+  - `src/pages/capitulo/planeta-terra/continentes.tsx`
+
+---
+
 ## [0.4.2-beta] - 2025-12-04
 
 ### 🎠 Melhorias na Página Rotação da Terra

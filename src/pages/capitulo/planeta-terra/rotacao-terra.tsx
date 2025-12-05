@@ -5,6 +5,7 @@ import { FaArrowLeft, FaArrowRight, FaClock, FaHistory, FaBookOpen } from "react
 import { GiEarthAmerica, GiWindSlap, GiSunrise } from "react-icons/gi";
 import { MdRotateRight, MdSpeed } from "react-icons/md";
 import RotacaoTerraCarousel from "@/components/ui/RotacaoTerraCarousel";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 
 // Importação dinâmica do componente 3D (client-side only)
 const PlanetEarthRotation3D = dynamic(
@@ -25,36 +26,36 @@ const dadosCientificos = [
     valor: "23h 56m",
     unidade: "4s",
     label: "Período Sideral",
-    cor: "text-cyan-400",
-    bgCor: "from-cyan-900/30 to-blue-900/30",
-    borderCor: "border-cyan-500/20",
+    cor: "text-cyan-600 dark:text-cyan-400",
+    bgCor: "from-cyan-200/50 to-blue-200/50 dark:from-cyan-900/30 dark:to-blue-900/30",
+    borderCor: "border-cyan-400/30 dark:border-cyan-500/20",
     descricao: "Tempo para uma rotação completa em relação às estrelas",
   },
   {
     valor: "1.670",
     unidade: "km/h",
     label: "Velocidade no Equador",
-    cor: "text-orange-400",
-    bgCor: "from-orange-900/30 to-red-900/30",
-    borderCor: "border-orange-500/20",
+    cor: "text-orange-600 dark:text-orange-400",
+    bgCor: "from-orange-200/50 to-red-200/50 dark:from-orange-900/30 dark:to-red-900/30",
+    borderCor: "border-orange-400/30 dark:border-orange-500/20",
     descricao: "Velocidade linear máxima na superfície",
   },
   {
     valor: "23,5",
     unidade: "°",
     label: "Inclinação Axial",
-    cor: "text-purple-400",
-    bgCor: "from-purple-900/30 to-pink-900/30",
-    borderCor: "border-purple-500/20",
+    cor: "text-purple-600 dark:text-purple-400",
+    bgCor: "from-purple-200/50 to-pink-200/50 dark:from-purple-900/30 dark:to-pink-900/30",
+    borderCor: "border-purple-400/30 dark:border-purple-500/20",
     descricao: "Ângulo do eixo em relação à órbita",
   },
   {
     valor: "465",
     unidade: "m/s",
     label: "Velocidade Angular",
-    cor: "text-green-400",
-    bgCor: "from-green-900/30 to-emerald-900/30",
-    borderCor: "border-green-500/20",
+    cor: "text-green-600 dark:text-green-400",
+    bgCor: "from-green-200/50 to-emerald-200/50 dark:from-green-900/30 dark:to-emerald-900/30",
+    borderCor: "border-green-400/30 dark:border-green-500/20",
     descricao: "Velocidade de rotação no equador",
   },
 ];
@@ -65,43 +66,43 @@ const consequenciasRotacao = [
     icon: "🌅",
     titulo: "Dia e Noite",
     descricao: "A alternância entre dia e noite é a consequência mais evidente da rotação. Enquanto uma face da Terra está iluminada pelo Sol, a outra permanece na escuridão.",
-    cor: "from-amber-500/20 to-orange-500/20",
-    borderCor: "border-amber-500/30",
+    cor: "from-amber-300/40 to-orange-300/40 dark:from-amber-500/20 dark:to-orange-500/20",
+    borderCor: "border-amber-400/50 dark:border-amber-500/30",
   },
   {
     icon: "🌀",
     titulo: "Efeito Coriolis",
     descricao: "A rotação causa o desvio de objetos em movimento (ventos, correntes oceânicas). No hemisfério norte, desviam para a direita; no sul, para a esquerda.",
-    cor: "from-blue-500/20 to-cyan-500/20",
-    borderCor: "border-blue-500/30",
+    cor: "from-blue-300/40 to-cyan-300/40 dark:from-blue-500/20 dark:to-cyan-500/20",
+    borderCor: "border-blue-400/50 dark:border-blue-500/30",
   },
   {
     icon: "🌊",
     titulo: "Correntes Oceânicas",
     descricao: "As grandes correntes oceânicas são influenciadas pela rotação, formando giros no sentido horário no hemisfério norte e anti-horário no sul.",
-    cor: "from-teal-500/20 to-emerald-500/20",
-    borderCor: "border-teal-500/30",
+    cor: "from-teal-300/40 to-emerald-300/40 dark:from-teal-500/20 dark:to-emerald-500/20",
+    borderCor: "border-teal-400/50 dark:border-teal-500/30",
   },
   {
     icon: "💨",
     titulo: "Padrões de Ventos",
     descricao: "Os ventos alísios, ventos de oeste e ventos polares são resultado direto da rotação combinada com o aquecimento diferencial da atmosfera.",
-    cor: "from-purple-500/20 to-indigo-500/20",
-    borderCor: "border-purple-500/30",
+    cor: "from-purple-300/40 to-indigo-300/40 dark:from-purple-500/20 dark:to-indigo-500/20",
+    borderCor: "border-purple-400/50 dark:border-purple-500/30",
   },
   {
     icon: "🏔️",
     titulo: "Achatamento Polar",
     descricao: "A força centrífuga causada pela rotação faz com que a Terra seja ligeiramente achatada nos polos e mais larga no equador (21 km de diferença).",
-    cor: "from-rose-500/20 to-pink-500/20",
-    borderCor: "border-rose-500/30",
+    cor: "from-rose-300/40 to-pink-300/40 dark:from-rose-500/20 dark:to-pink-500/20",
+    borderCor: "border-rose-400/50 dark:border-rose-500/30",
   },
   {
     icon: "🧭",
     titulo: "Campo Magnético",
     descricao: "A rotação do núcleo externo líquido, combinada com convecção, gera o campo magnético terrestre através do efeito dínamo.",
-    cor: "from-violet-500/20 to-purple-500/20",
-    borderCor: "border-violet-500/30",
+    cor: "from-violet-300/40 to-purple-300/40 dark:from-violet-500/20 dark:to-purple-500/20",
+    borderCor: "border-violet-400/50 dark:border-violet-500/30",
   },
 ];
 
@@ -194,40 +195,43 @@ export default function RotacaoTerra() {
         />
       </Head>
 
-      <main className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
+      <main className="min-h-screen bg-gradient-to-b from-gray-50 via-gray-100 to-gray-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
         {/* Hero Section */}
         <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-[url('/textures/stars-bg.jpg')] opacity-20"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/50 to-slate-900"></div>
+          <div className="absolute inset-0 bg-[url('/textures/stars-bg.jpg')] opacity-5 dark:opacity-20"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-50/50 to-gray-50 dark:via-slate-900/50 dark:to-slate-900"></div>
 
           <div className="relative container mx-auto px-4 py-12">
             {/* Breadcrumb */}
-            <nav className="flex items-center gap-2 text-sm text-gray-400 mb-6">
-              <Link href="/" className="hover:text-cyan-400 transition-colors">Início</Link>
-              <span>/</span>
-              <Link href="/capitulo/planeta-terra" className="hover:text-cyan-400 transition-colors">Planeta Terra</Link>
-              <span>/</span>
-              <span className="text-cyan-400">Rotação da Terra</span>
+            <nav className="flex items-center justify-between text-sm text-gray-600 dark:text-gray-400 mb-6">
+              <div className="flex items-center gap-2">
+                <Link href="/" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Início</Link>
+                <span>/</span>
+                <Link href="/capitulo/planeta-terra" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Planeta Terra</Link>
+                <span>/</span>
+                <span className="text-cyan-600 dark:text-cyan-400">Rotação da Terra</span>
+              </div>
+              <ThemeToggle />
             </nav>
 
             {/* Título */}
             <div className="flex items-center gap-4 mb-6">
-              <div className="p-4 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-500/30">
+              <div className="p-4 rounded-2xl bg-gradient-to-br from-cyan-300/40 to-blue-300/40 dark:from-cyan-500/20 dark:to-blue-500/20 border border-cyan-400/50 dark:border-cyan-500/30">
                 <MdRotateRight className="text-4xl text-cyan-400" />
               </div>
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold text-white">
+                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
                   Rotação da Terra
                 </h1>
-                <p className="text-gray-400 mt-1">Capítulo: Planeta Terra • Subcapítulo 4</p>
+                <p className="text-gray-600 dark:text-gray-400 mt-1">Capítulo: Planeta Terra • Subcapítulo 4</p>
               </div>
             </div>
 
             {/* Introdução */}
-            <p className="text-xl text-gray-300 max-w-3xl leading-relaxed">
-              A <span className="text-cyan-400 font-semibold">rotação da Terra</span> é o movimento 
+            <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl leading-relaxed">
+              A <span className="text-cyan-600 dark:text-cyan-400 font-semibold">rotação da Terra</span> é o movimento 
               que o planeta realiza em torno de seu próprio eixo, responsável pela 
-              <span className="text-amber-400"> alternância entre dia e noite</span>. Este movimento 
+              <span className="text-amber-600 dark:text-amber-400"> alternância entre dia e noite</span>. Este movimento 
               fundamental determina nossos ciclos diários e influencia fenômenos globais como 
               ventos, correntes oceânicas e o campo magnético.
             </p>
@@ -237,11 +241,11 @@ export default function RotacaoTerra() {
         {/* Visualização 3D */}
         <section className="container mx-auto px-4 py-8">
           <div className="mb-6">
-            <h2 className="text-2xl font-bold text-white flex items-center gap-3">
-              <GiEarthAmerica className="text-cyan-400" />
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-3">
+              <GiEarthAmerica className="text-cyan-600 dark:text-cyan-400" />
               Visualização Interativa 3D
             </h2>
-            <p className="text-slate-400 text-sm mt-2 max-w-2xl">
+            <p className="text-gray-600 dark:text-slate-400 text-sm mt-2 max-w-2xl">
               Observe a Terra girando em seu eixo inclinado de 23,5°. A linha amarela representa 
               o eixo de rotação e a linha vermelha marca o equador.
             </p>
@@ -250,7 +254,7 @@ export default function RotacaoTerra() {
           <PlanetEarthRotation3D />
           
           <div className="mt-4 flex flex-wrap items-center justify-between gap-4">
-            <p className="text-slate-400 text-sm">
+            <p className="text-gray-600 dark:text-slate-400 text-sm">
               💡 <strong>Dica:</strong> Arraste para mudar o ângulo de visão. A rotação da Terra 
               ocorre de oeste para leste (sentido anti-horário visto do Polo Norte).
             </p>
@@ -260,11 +264,11 @@ export default function RotacaoTerra() {
         {/* Dados Científicos Principais */}
         <section className="container mx-auto px-4 py-12">
           <div className="mb-8">
-            <h2 className="text-3xl font-bold text-white mb-4 flex items-center gap-3">
-              <FaClock className="text-cyan-400" />
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-3">
+              <FaClock className="text-cyan-600 dark:text-cyan-400" />
               Dados Científicos
             </h2>
-            <p className="text-slate-400 max-w-3xl">
+            <p className="text-gray-600 dark:text-slate-400 max-w-3xl">
               Números fundamentais que definem a rotação do nosso planeta.
             </p>
           </div>
@@ -280,8 +284,8 @@ export default function RotacaoTerra() {
                   {dado.valor}
                   <span className="text-lg md:text-xl ml-1">{dado.unidade}</span>
                 </p>
-                <p className="text-white font-medium mt-1">{dado.label}</p>
-                <p className="text-gray-400 text-xs mt-2">{dado.descricao}</p>
+                <p className="text-gray-900 dark:text-white font-medium mt-1">{dado.label}</p>
+                <p className="text-gray-600 dark:text-gray-400 text-xs mt-2">{dado.descricao}</p>
               </div>
             ))}
           </div>
@@ -289,12 +293,12 @@ export default function RotacaoTerra() {
 
         {/* Velocidade vs Latitude */}
         <section className="container mx-auto px-4 py-12">
-          <div className="bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-8 border border-slate-700/50">
-            <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-              <MdSpeed className="text-orange-400" />
+          <div className="bg-gradient-to-r from-gray-200 to-gray-300 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-8 border border-gray-300/50 dark:border-slate-700/50">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
+              <MdSpeed className="text-orange-600 dark:text-orange-400" />
               Velocidade de Rotação por Latitude
             </h3>
-            <p className="text-slate-400 mb-6">
+            <p className="text-gray-600 dark:text-slate-400 mb-6">
               A velocidade linear diminui conforme nos aproximamos dos polos, pois o raio de rotação é menor.
             </p>
             
@@ -302,10 +306,10 @@ export default function RotacaoTerra() {
               {comparacaoVelocidades.map((item, index) => (
                 <div key={index} className="space-y-2">
                   <div className="flex justify-between text-sm">
-                    <span className="text-white">{item.local}</span>
-                    <span className="text-cyan-400 font-medium">{item.velocidade}</span>
+                    <span className="text-gray-900 dark:text-white">{item.local}</span>
+                    <span className="text-cyan-600 dark:text-cyan-400 font-medium">{item.velocidade}</span>
                   </div>
-                  <div className="h-3 bg-slate-700 rounded-full overflow-hidden">
+                  <div className="h-3 bg-gray-400/50 dark:bg-slate-700 rounded-full overflow-hidden">
                     <div 
                       className="h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full transition-all duration-1000"
                       style={{ width: `${item.porcentagem}%` }}
@@ -315,7 +319,7 @@ export default function RotacaoTerra() {
               ))}
             </div>
             
-            <p className="text-slate-500 text-sm mt-6 italic">
+            <p className="text-gray-500 dark:text-slate-500 text-sm mt-6 italic">
               💡 Nos polos, a velocidade linear é praticamente zero, mas a velocidade angular 
               (uma rotação por dia) é a mesma em qualquer ponto da Terra.
             </p>
@@ -325,11 +329,11 @@ export default function RotacaoTerra() {
         {/* Consequências da Rotação */}
         <section className="container mx-auto px-4 py-12">
           <div className="mb-8">
-            <h2 className="text-3xl font-bold text-white mb-4 flex items-center gap-3">
-              <GiWindSlap className="text-purple-400" />
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-3">
+              <GiWindSlap className="text-purple-600 dark:text-purple-400" />
               Consequências da Rotação
             </h2>
-            <p className="text-slate-400 max-w-3xl">
+            <p className="text-gray-600 dark:text-slate-400 max-w-3xl">
               A rotação da Terra produz uma série de fenômenos físicos e geográficos fundamentais 
               para a vida no planeta.
             </p>
@@ -343,9 +347,9 @@ export default function RotacaoTerra() {
               >
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-3xl">{item.icon}</span>
-                  <h3 className="text-lg font-bold text-white">{item.titulo}</h3>
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white">{item.titulo}</h3>
                 </div>
-                <p className="text-slate-300 text-sm leading-relaxed">
+                <p className="text-gray-700 dark:text-slate-300 text-sm leading-relaxed">
                   {item.descricao}
                 </p>
               </div>
@@ -355,45 +359,45 @@ export default function RotacaoTerra() {
 
         {/* Inclinação Axial e Estações */}
         <section className="container mx-auto px-4 py-12">
-          <div className="bg-gradient-to-br from-amber-900/20 via-slate-800/50 to-orange-900/20 rounded-2xl p-8 border border-amber-500/20">
+          <div className="bg-gradient-to-br from-amber-200/20 via-gray-200/50 to-orange-200/20 dark:from-amber-900/20 dark:via-slate-800/50 dark:to-orange-900/20 rounded-2xl p-8 border border-amber-400/20 dark:border-amber-500/20">
             <div className="mb-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/20 rounded-full text-amber-400 text-sm mb-4">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/20 rounded-full text-amber-600 dark:text-amber-400 text-sm mb-4">
                 <GiSunrise className="text-lg" />
                 Inclinação Axial
               </div>
-              <h2 className="text-3xl font-bold text-white mb-4">
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
                 Por que temos Estações do Ano?
               </h2>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8">
               <div className="space-y-6">
-                <p className="text-slate-300 leading-relaxed">
+                <p className="text-gray-700 dark:text-slate-300 leading-relaxed">
                   O eixo de rotação da Terra não é perpendicular ao plano de sua órbita ao redor do Sol. 
-                  Ele está inclinado em <strong className="text-amber-400">23,5°</strong> (ou mais precisamente, 
+                  Ele está inclinado em <strong className="text-amber-600 dark:text-amber-400">23,5°</strong> (ou mais precisamente, 
                   23,44°). Esta inclinação é a responsável pelas estações do ano.
                 </p>
                 
                 <div className="space-y-4">
-                  <div className="p-4 bg-slate-800/60 rounded-xl border border-slate-700/40">
-                    <h4 className="text-white font-medium mb-2">☀️ Verão</h4>
-                    <p className="text-slate-400 text-sm">
+                  <div className="p-4 bg-gray-200/60 dark:bg-slate-800/60 rounded-xl border border-gray-300/40 dark:border-slate-700/40">
+                    <h4 className="text-gray-900 dark:text-white font-medium mb-2">☀️ Verão</h4>
+                    <p className="text-gray-600 dark:text-slate-400 text-sm">
                       Quando um hemisfério está inclinado em direção ao Sol, recebe luz mais direta 
                       e dias mais longos, resultando em temperaturas mais altas.
                     </p>
                   </div>
                   
-                  <div className="p-4 bg-slate-800/60 rounded-xl border border-slate-700/40">
-                    <h4 className="text-white font-medium mb-2">❄️ Inverno</h4>
-                    <p className="text-slate-400 text-sm">
+                  <div className="p-4 bg-gray-200/60 dark:bg-slate-800/60 rounded-xl border border-gray-300/40 dark:border-slate-700/40">
+                    <h4 className="text-gray-900 dark:text-white font-medium mb-2">❄️ Inverno</h4>
+                    <p className="text-gray-600 dark:text-slate-400 text-sm">
                       Quando inclinado para longe do Sol, a luz chega em ângulo mais oblíquo 
                       e os dias são mais curtos, causando temperaturas mais baixas.
                     </p>
                   </div>
                   
-                  <div className="p-4 bg-slate-800/60 rounded-xl border border-slate-700/40">
-                    <h4 className="text-white font-medium mb-2">🍂🌸 Equinócios</h4>
-                    <p className="text-slate-400 text-sm">
+                  <div className="p-4 bg-gray-200/60 dark:bg-slate-800/60 rounded-xl border border-gray-300/40 dark:border-slate-700/40">
+                    <h4 className="text-gray-900 dark:text-white font-medium mb-2">🍂🌸 Equinócios</h4>
+                    <p className="text-gray-600 dark:text-slate-400 text-sm">
                       Nos equinócios (março e setembro), o eixo não aponta para o Sol nem para longe dele, 
                       resultando em dias e noites de igual duração em todo o planeta.
                     </p>
@@ -402,38 +406,38 @@ export default function RotacaoTerra() {
               </div>
 
               <div className="space-y-6">
-                <div className="p-6 bg-gradient-to-br from-amber-500/10 to-orange-500/10 rounded-2xl border border-amber-500/20">
-                  <h3 className="text-xl font-bold text-white mb-4">📐 Medidas Importantes</h3>
-                  <ul className="space-y-3 text-slate-300 text-sm">
+                <div className="p-6 bg-gradient-to-br from-amber-200/30 to-orange-200/30 dark:from-amber-500/10 dark:to-orange-500/10 rounded-2xl border border-amber-400/20 dark:border-amber-500/20">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">📐 Medidas Importantes</h3>
+                  <ul className="space-y-3 text-gray-700 dark:text-slate-300 text-sm">
                     <li className="flex justify-between">
                       <span>Inclinação axial atual:</span>
-                      <span className="text-amber-400 font-medium">23,44°</span>
+                      <span className="text-amber-600 dark:text-amber-400 font-medium">23,44°</span>
                     </li>
                     <li className="flex justify-between">
                       <span>Variação (ciclo de 41.000 anos):</span>
-                      <span className="text-amber-400 font-medium">22,1° a 24,5°</span>
+                      <span className="text-amber-600 dark:text-amber-400 font-medium">22,1° a 24,5°</span>
                     </li>
                     <li className="flex justify-between">
                       <span>Trópico de Câncer:</span>
-                      <span className="text-amber-400 font-medium">23,5° N</span>
+                      <span className="text-amber-600 dark:text-amber-400 font-medium">23,5° N</span>
                     </li>
                     <li className="flex justify-between">
                       <span>Trópico de Capricórnio:</span>
-                      <span className="text-amber-400 font-medium">23,5° S</span>
+                      <span className="text-amber-600 dark:text-amber-400 font-medium">23,5° S</span>
                     </li>
                     <li className="flex justify-between">
                       <span>Círculo Polar Ártico:</span>
-                      <span className="text-amber-400 font-medium">66,5° N</span>
+                      <span className="text-amber-600 dark:text-amber-400 font-medium">66,5° N</span>
                     </li>
                     <li className="flex justify-between">
                       <span>Círculo Polar Antártico:</span>
-                      <span className="text-amber-400 font-medium">66,5° S</span>
+                      <span className="text-amber-600 dark:text-amber-400 font-medium">66,5° S</span>
                     </li>
                   </ul>
                 </div>
 
-                <div className="p-4 bg-slate-800/50 rounded-xl border border-slate-700/50">
-                  <p className="text-slate-400 text-sm italic">
+                <div className="p-4 bg-gray-200/50 dark:bg-slate-800/50 rounded-xl border border-gray-300/50 dark:border-slate-700/50">
+                  <p className="text-gray-600 dark:text-slate-400 text-sm italic">
                     💡 <strong>Curiosidade:</strong> A Lua ajuda a estabilizar a inclinação axial da Terra. 
                     Sem ela, o eixo poderia variar caoticamente de 0° a 85°, causando climas extremos 
                     e possivelmente impossibilitando a vida complexa.
@@ -447,11 +451,11 @@ export default function RotacaoTerra() {
         {/* Evolução Histórica */}
         <section className="container mx-auto px-4 py-12">
           <div className="mb-8">
-            <h2 className="text-3xl font-bold text-white mb-4 flex items-center gap-3">
-              <FaHistory className="text-emerald-400" />
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-3">
+              <FaHistory className="text-emerald-600 dark:text-emerald-400" />
               Evolução Histórica da Rotação
             </h2>
-            <p className="text-slate-400 max-w-3xl">
+            <p className="text-gray-600 dark:text-slate-400 max-w-3xl">
               A Terra está desacelerando gradualmente devido às forças de maré da Lua e do Sol. 
               Essa desaceleração é extremamente lenta, mas ao longo de bilhões de anos, 
               teve efeitos significativos.
@@ -466,17 +470,17 @@ export default function RotacaoTerra() {
               {evolucaoHistorica.map((item, index) => (
                 <div key={index} className={`relative flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                   {/* Ponto na linha do tempo */}
-                  <div className="absolute left-4 md:left-1/2 w-4 h-4 bg-slate-900 border-2 border-cyan-500 rounded-full transform -translate-x-1/2 z-10" />
+                  <div className="absolute left-4 md:left-1/2 w-4 h-4 bg-gray-800 dark:bg-slate-900 border-2 border-cyan-500 rounded-full transform -translate-x-1/2 z-10" />
                   
                   {/* Card */}
                   <div className={`ml-12 md:ml-0 md:w-[45%] ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
-                    <div className="bg-slate-800/60 rounded-xl p-5 border border-slate-700/50 hover:border-cyan-500/30 transition-colors">
+                    <div className="bg-gray-200/60 dark:bg-slate-800/60 rounded-xl p-5 border border-gray-300/50 dark:border-slate-700/50 hover:border-cyan-500/30 transition-colors">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-cyan-400 text-sm font-medium">{item.era}</span>
-                        <span className="text-amber-400 font-bold">{item.duracao}</span>
+                        <span className="text-cyan-600 dark:text-cyan-400 text-sm font-medium">{item.era}</span>
+                        <span className="text-amber-600 dark:text-amber-400 font-bold">{item.duracao}</span>
                       </div>
-                      <h4 className="text-white font-semibold mb-2">{item.evento}</h4>
-                      <p className="text-slate-400 text-sm">{item.descricao}</p>
+                      <h4 className="text-gray-900 dark:text-white font-semibold mb-2">{item.evento}</h4>
+                      <p className="text-gray-600 dark:text-slate-400 text-sm">{item.descricao}</p>
                     </div>
                   </div>
                 </div>
@@ -487,49 +491,49 @@ export default function RotacaoTerra() {
 
         {/* Efeito Coriolis Detalhado */}
         <section className="container mx-auto px-4 py-12">
-          <div className="bg-gradient-to-br from-blue-900/30 via-slate-800/50 to-cyan-900/30 rounded-2xl p-8 border border-blue-500/20">
+          <div className="bg-gradient-to-br from-blue-200/30 via-gray-200/50 to-cyan-200/30 dark:from-blue-900/30 dark:via-slate-800/50 dark:to-cyan-900/30 rounded-2xl p-8 border border-blue-400/20 dark:border-blue-500/20">
             <div className="mb-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/20 rounded-full text-blue-400 text-sm mb-4">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/20 rounded-full text-blue-600 dark:text-blue-400 text-sm mb-4">
                 <span className="text-lg">🌀</span>
                 Física Aplicada
               </div>
-              <h2 className="text-3xl font-bold text-white mb-4">
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
                 O Efeito Coriolis
               </h2>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8">
               <div className="space-y-6">
-                <p className="text-slate-300 leading-relaxed">
-                  O <strong className="text-blue-400">efeito Coriolis</strong> é uma força fictícia 
+                <p className="text-gray-700 dark:text-slate-300 leading-relaxed">
+                  O <strong className="text-blue-600 dark:text-blue-400">efeito Coriolis</strong> é uma força fictícia 
                   (ou inercial) que aparece em sistemas de referência em rotação, como a Terra. 
                   Ele causa o desvio de objetos em movimento em relação à superfície.
                 </p>
 
                 <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="p-4 bg-slate-800/60 rounded-xl border-l-4 border-blue-500">
-                    <h4 className="text-white font-medium mb-2">🌐 Hemisfério Norte</h4>
-                    <p className="text-slate-400 text-sm">
-                      Objetos em movimento são desviados para a <strong className="text-blue-300">direita</strong> 
+                  <div className="p-4 bg-gray-200/60 dark:bg-slate-800/60 rounded-xl border-l-4 border-blue-500">
+                    <h4 className="text-gray-900 dark:text-white font-medium mb-2">🌐 Hemisfério Norte</h4>
+                    <p className="text-gray-600 dark:text-slate-400 text-sm">
+                      Objetos em movimento são desviados para a <strong className="text-blue-600 dark:text-blue-300">direita</strong> 
                       em relação à sua trajetória original.
                     </p>
                   </div>
                   
-                  <div className="p-4 bg-slate-800/60 rounded-xl border-l-4 border-cyan-500">
-                    <h4 className="text-white font-medium mb-2">🌍 Hemisfério Sul</h4>
-                    <p className="text-slate-400 text-sm">
-                      Objetos em movimento são desviados para a <strong className="text-cyan-300">esquerda</strong> 
+                  <div className="p-4 bg-gray-200/60 dark:bg-slate-800/60 rounded-xl border-l-4 border-cyan-500">
+                    <h4 className="text-gray-900 dark:text-white font-medium mb-2">🌍 Hemisfério Sul</h4>
+                    <p className="text-gray-600 dark:text-slate-400 text-sm">
+                      Objetos em movimento são desviados para a <strong className="text-cyan-600 dark:text-cyan-300">esquerda</strong> 
                       em relação à sua trajetória original.
                     </p>
                   </div>
                 </div>
 
-                <div className="p-4 bg-slate-800/50 rounded-xl">
-                  <h4 className="text-white font-medium mb-3">📊 Fórmula de Coriolis</h4>
-                  <p className="text-slate-300 font-mono text-center text-lg py-2 bg-slate-900/50 rounded-lg">
+                <div className="p-4 bg-gray-200/50 dark:bg-slate-800/50 rounded-xl">
+                  <h4 className="text-gray-900 dark:text-white font-medium mb-3">📊 Fórmula de Coriolis</h4>
+                  <p className="text-gray-700 dark:text-slate-300 font-mono text-center text-lg py-2 bg-gray-300/50 dark:bg-slate-900/50 rounded-lg">
                     F = 2mωv sin(φ)
                   </p>
-                  <ul className="mt-3 text-slate-400 text-xs space-y-1">
+                  <ul className="mt-3 text-gray-600 dark:text-slate-400 text-xs space-y-1">
                     <li><strong>F</strong> = Força de Coriolis</li>
                     <li><strong>m</strong> = Massa do objeto</li>
                     <li><strong>ω</strong> = Velocidade angular da Terra (7,29 × 10⁻⁵ rad/s)</li>
@@ -540,40 +544,40 @@ export default function RotacaoTerra() {
               </div>
 
               <div className="space-y-6">
-                <h3 className="text-xl font-bold text-white">Aplicações Práticas</h3>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white">Aplicações Práticas</h3>
                 
                 <div className="space-y-4">
-                  <div className="p-4 bg-gradient-to-r from-blue-900/30 to-transparent rounded-xl border-l-4 border-blue-400">
-                    <h4 className="text-blue-300 font-medium mb-1">🌪️ Furacões e Ciclones</h4>
-                    <p className="text-slate-400 text-sm">
+                  <div className="p-4 bg-gradient-to-r from-blue-200/30 dark:from-blue-900/30 to-transparent rounded-xl border-l-4 border-blue-400">
+                    <h4 className="text-blue-600 dark:text-blue-300 font-medium mb-1">🌪️ Furacões e Ciclones</h4>
+                    <p className="text-gray-600 dark:text-slate-400 text-sm">
                       Giram no sentido anti-horário no hemisfério norte e horário no sul devido ao Coriolis.
                     </p>
                   </div>
                   
-                  <div className="p-4 bg-gradient-to-r from-cyan-900/30 to-transparent rounded-xl border-l-4 border-cyan-400">
-                    <h4 className="text-cyan-300 font-medium mb-1">🛫 Aviação</h4>
-                    <p className="text-slate-400 text-sm">
+                  <div className="p-4 bg-gradient-to-r from-cyan-200/30 dark:from-cyan-900/30 to-transparent rounded-xl border-l-4 border-cyan-400">
+                    <h4 className="text-cyan-600 dark:text-cyan-300 font-medium mb-1">🛫 Aviação</h4>
+                    <p className="text-gray-600 dark:text-slate-400 text-sm">
                       Pilotos devem compensar o efeito em voos longos, especialmente próximo aos polos.
                     </p>
                   </div>
                   
-                  <div className="p-4 bg-gradient-to-r from-teal-900/30 to-transparent rounded-xl border-l-4 border-teal-400">
-                    <h4 className="text-teal-300 font-medium mb-1">🎯 Artilharia de Longo Alcance</h4>
-                    <p className="text-slate-400 text-sm">
+                  <div className="p-4 bg-gradient-to-r from-teal-200/30 dark:from-teal-900/30 to-transparent rounded-xl border-l-4 border-teal-400">
+                    <h4 className="text-teal-600 dark:text-teal-300 font-medium mb-1">🎯 Artilharia de Longo Alcance</h4>
+                    <p className="text-gray-600 dark:text-slate-400 text-sm">
                       Projéteis de artilharia e mísseis balísticos precisam de correção para o Coriolis.
                     </p>
                   </div>
                   
-                  <div className="p-4 bg-gradient-to-r from-emerald-900/30 to-transparent rounded-xl border-l-4 border-emerald-400">
-                    <h4 className="text-emerald-300 font-medium mb-1">🌊 Oceanografia</h4>
-                    <p className="text-slate-400 text-sm">
+                  <div className="p-4 bg-gradient-to-r from-emerald-200/30 dark:from-emerald-900/30 to-transparent rounded-xl border-l-4 border-emerald-400">
+                    <h4 className="text-emerald-600 dark:text-emerald-300 font-medium mb-1">🌊 Oceanografia</h4>
+                    <p className="text-gray-600 dark:text-slate-400 text-sm">
                       As grandes correntes oceânicas formam giros influenciados pelo Coriolis.
                     </p>
                   </div>
                 </div>
 
-                <div className="p-4 bg-red-900/20 rounded-xl border border-red-500/30">
-                  <p className="text-red-300 text-sm">
+                <div className="p-4 bg-red-200/20 dark:bg-red-900/20 rounded-xl border border-red-400/30 dark:border-red-500/30">
+                  <p className="text-red-600 dark:text-red-300 text-sm">
                     ⚠️ <strong>Mito desvendado:</strong> O efeito Coriolis NÃO afeta a direção que a água 
                     gira ao descer pelo ralo. A escala é pequena demais — outros fatores (forma da pia, 
                     movimento inicial da água) são muito mais significativos.
@@ -587,11 +591,11 @@ export default function RotacaoTerra() {
         {/* Curiosidades */}
         <section className="container mx-auto px-4 py-12">
           <div className="mb-8">
-            <h2 className="text-3xl font-bold text-white mb-4 flex items-center gap-3">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-3">
               <span className="text-3xl">💡</span>
               Curiosidades Fascinantes
             </h2>
-            <p className="text-slate-400 max-w-3xl">
+            <p className="text-gray-600 dark:text-slate-400 max-w-3xl">
               Fatos surpreendentes sobre a rotação da Terra que você talvez não saiba.
             </p>
           </div>
@@ -600,13 +604,13 @@ export default function RotacaoTerra() {
             {curiosidades.map((item, index) => (
               <div 
                 key={index}
-                className="bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50 hover:border-cyan-500/30 transition-colors"
+                className="bg-gray-200/50 dark:bg-slate-800/50 rounded-2xl p-6 border border-gray-300/50 dark:border-slate-700/50 hover:border-cyan-500/30 transition-colors"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-3xl">{item.icon}</span>
-                  <h3 className="text-lg font-bold text-white">{item.titulo}</h3>
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white">{item.titulo}</h3>
                 </div>
-                <p className="text-slate-300 text-sm leading-relaxed">
+                <p className="text-gray-700 dark:text-slate-300 text-sm leading-relaxed">
                   {item.descricao}
                 </p>
               </div>
@@ -617,44 +621,44 @@ export default function RotacaoTerra() {
         {/* Infográfico Educativo */}
         <section className="container mx-auto px-4 py-12">
           <div className="mb-8">
-            <h2 className="text-3xl font-bold text-white mb-4 flex items-center gap-3">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-3">
               <span className="text-4xl">📋</span>
               Infográfico Educativo
             </h2>
-            <p className="text-slate-400 max-w-3xl">
+            <p className="text-gray-600 dark:text-slate-400 max-w-3xl">
               Este infográfico resume os principais aspectos da rotação terrestre: velocidade, 
               inclinação axial, efeitos e variações ao longo do tempo.
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 rounded-2xl p-6 md:p-8 border border-slate-700/50">
+          <div className="bg-gradient-to-br from-gray-200/60 to-gray-300/60 dark:from-slate-800/60 dark:to-slate-900/60 rounded-2xl p-6 md:p-8 border border-gray-300/50 dark:border-slate-700/50">
             <div className="flex justify-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/infograficos/Rotação da Terra infográfico.png"
                 alt="Infográfico A Terra em Movimento - Um Guia Rápido Sobre a Rotação do Planeta"
-                className="rounded-xl shadow-lg shadow-slate-900/50 max-w-full h-auto border border-slate-700/30"
+                className="rounded-xl shadow-lg shadow-gray-400/50 dark:shadow-slate-900/50 max-w-full h-auto border border-gray-300/30 dark:border-slate-700/30"
                 loading="lazy"
               />
             </div>
-            <p className="text-sm text-center mt-4 text-slate-400">
-              Fonte: <span className="text-cyan-400">Enciclopédia da Ciência</span>
+            <p className="text-sm text-center mt-4 text-gray-500 dark:text-slate-400">
+              Fonte: <span className="text-cyan-600 dark:text-cyan-400">Enciclopédia da Ciência</span>
             </p>
           </div>
         </section>
 
         {/* Vídeo Educativo */}
         <section className="container mx-auto px-4 py-12">
-          <div className="bg-gradient-to-br from-red-900/20 via-slate-800/50 to-purple-900/20 rounded-2xl p-8 border border-red-500/20">
+          <div className="bg-gradient-to-br from-red-200/20 via-gray-200/50 to-purple-200/20 dark:from-red-900/20 dark:via-slate-800/50 dark:to-purple-900/20 rounded-2xl p-8 border border-red-400/20 dark:border-red-500/20">
             <div className="text-center mb-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-500/20 rounded-full text-red-400 text-sm mb-4">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-500/20 rounded-full text-red-600 dark:text-red-400 text-sm mb-4">
                 <span className="animate-pulse">🔴</span> Vídeo Educativo
               </div>
-              <h2 className="text-3xl font-bold text-white mb-4 flex items-center justify-center gap-3">
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 flex items-center justify-center gap-3">
                 <span className="text-4xl">🎬</span>
                 Entenda a Rotação da Terra
               </h2>
-              <p className="text-slate-400 max-w-2xl mx-auto">
+              <p className="text-gray-600 dark:text-slate-400 max-w-2xl mx-auto">
                 Assista a este vídeo que explica de forma visual e didática como funciona 
                 a rotação terrestre e suas consequências para o nosso dia a dia.
               </p>
@@ -686,7 +690,7 @@ export default function RotacaoTerra() {
                 </svg>
                 Assistir no YouTube
               </a>
-              <span className="flex items-center gap-2 px-4 py-2 bg-slate-700/50 rounded-lg text-slate-300">
+              <span className="flex items-center gap-2 px-4 py-2 bg-gray-300/50 dark:bg-slate-700/50 rounded-lg text-gray-700 dark:text-slate-300">
                 <span>📺</span> Conteúdo educativo complementar
               </span>
             </div>
@@ -696,11 +700,11 @@ export default function RotacaoTerra() {
         {/* Galeria de Imagens - Carousel */}
         <section className="container mx-auto px-4 py-12">
           <div className="mb-8">
-            <h2 className="text-3xl font-bold text-white mb-4 flex items-center gap-3">
-              <FaBookOpen className="text-emerald-400" />
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-3">
+              <FaBookOpen className="text-emerald-600 dark:text-emerald-400" />
               A Terra em Movimento
             </h2>
-            <p className="text-slate-400 max-w-3xl">
+            <p className="text-gray-600 dark:text-slate-400 max-w-3xl">
               Uma jornada científica pela rotação terrestre. Navegue pelas imagens para 
               explorar cada aspecto do movimento de rotação, desde os conceitos básicos 
               até os efeitos e variações ao longo do tempo.
@@ -709,17 +713,17 @@ export default function RotacaoTerra() {
 
           <RotacaoTerraCarousel />
           
-          <p className="text-sm text-center mt-6 text-slate-500">
+          <p className="text-sm text-center mt-6 text-gray-500 dark:text-slate-500">
             💡 Use os controles para navegar manualmente ou deixe em reprodução automática.
           </p>
         </section>
 
         {/* Navegação */}
         <section className="container mx-auto px-4 py-12">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 border-t border-slate-700/50 pt-8">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 border-t border-gray-300/50 dark:border-slate-700/50 pt-8">
             <Link
               href="/capitulo/planeta-terra/estrutura-terra"
-              className="flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-gray-300 hover:text-white transition-all group"
+              className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gray-200 hover:bg-gray-300 dark:bg-slate-800 dark:hover:bg-slate-700 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-all group"
             >
               <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
               Anterior: Estrutura da Terra
@@ -736,7 +740,7 @@ export default function RotacaoTerra() {
 
           {/* Rodapé institucional */}
           <footer className="mt-12 text-center text-sm text-gray-500 dark:text-gray-400">
-            <p>Enciclopédia da Ciência 2025</p>
+            <p>Enciclopédia da Ciência © 2025 - Todos os direitos reservados</p>
             <p>Conteúdo Feito com ❤️ e ☕ por Jhonnatan Luiz</p>
           </footer>
         </section>
@@ -744,3 +748,6 @@ export default function RotacaoTerra() {
     </>
   );
 }
+
+// Desabilitar layout global (esta página tem layout próprio)
+RotacaoTerra.noLayout = true;

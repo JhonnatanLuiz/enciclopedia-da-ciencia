@@ -249,3 +249,6 @@ export default function Sumario() {
     </div>
   );
 }
+
+// Desabilitar layout global (esta página tem layout próprio)
+Sumario.noLayout = true;

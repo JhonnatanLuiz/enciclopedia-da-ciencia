@@ -148,3 +148,6 @@ export default function Home() {
     </div>
   );
 }
+
+// Desabilitar layout global (esta página tem layout próprio)
+Home.noLayout = true;

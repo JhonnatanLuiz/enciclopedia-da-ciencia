@@ -363,3 +363,6 @@ export default function Buscar() {
     </div>
   );
 }
+
+// Desabilitar layout global (esta página tem layout próprio)
+Buscar.noLayout = true;
