@@ -26,7 +26,7 @@ export default function Layout({ children, noLayout = false }: LayoutProps) {
   return (
     <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300">
       <Header />
-      <main className="flex-1">
+      <main className="flex flex-1">
         {children}
       </main>
       <Footer />

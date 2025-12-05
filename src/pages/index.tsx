@@ -2,9 +2,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
-import Header from '../components/layout/Header';
 import Sidebar from '../components/layout/Sidebar';
-import Footer from '../components/layout/Footer';
 import { capitulos } from '../data/capitulos';
 
 // Importação dinâmica do Atom3D (client-side only)
@@ -29,13 +27,10 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-gray-950 transition-colors duration-300">
-      <Header />
+    <div className="flex flex-1">
+      <Sidebar />
       
-      <main className="flex flex-1">
-        <Sidebar />
-        
-        <div className="flex-1 overflow-y-auto">
+      <div className="flex-1 overflow-y-auto">
           {/* Hero Section com Átomo 3D */}
           <section className="bg-gradient-to-b from-white to-cyan-50/30 dark:from-gray-900 dark:to-gray-900/50">
             <div className="px-4 py-6">
@@ -142,12 +137,8 @@ export default function Home() {
             </div>
           </section>
         </div>
-      </main>
-      
-      <Footer />
-    </div>
+      </div>
   );
 }
 
-// Desabilitar layout global (esta página tem layout próprio)
-Home.noLayout = true;
+// Usar layout global (Header + Footer automáticos)
