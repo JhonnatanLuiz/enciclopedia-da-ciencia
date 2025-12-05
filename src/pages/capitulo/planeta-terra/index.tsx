@@ -1,8 +1,6 @@
 import { useMemo } from 'react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
-import Header from '../../../components/layout/Header';
-import Footer from '../../../components/layout/Footer';
 import { capitulos } from '../../../data/capitulos';
 
 // Importação dinâmica do componente 3D (client-side only)
@@ -34,12 +32,9 @@ export default function PlanetaTerra() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-gray-950 transition-colors duration-300">
-      <Header />
-
-      <main className="flex-1">
-        {/* Hero do Capítulo */}
-        <section className={`bg-gradient-to-r ${capitulo.cor} py-12 md:py-16`}>
+    <>
+      {/* Hero do Capítulo */}
+      <section className={`bg-gradient-to-r ${capitulo.cor} py-12 md:py-16`}>
           <div className="max-w-5xl mx-auto px-4">
             {/* Breadcrumb */}
             <nav className="mb-6" aria-label="Breadcrumb">
@@ -203,12 +198,8 @@ export default function PlanetaTerra() {
             )}
           </div>
         </section>
-      </main>
-
-      <Footer />
-    </div>
+      </>
   );
 }
 
-// Desabilitar layout global (esta página tem layout próprio)
-PlanetaTerra.noLayout = true;
+// Usar layout global (Header + Footer automáticos)
