@@ -232,6 +232,13 @@ function AsteroidBelt() {
 
   // Pre-generate deterministic positions using a seeded approach
   const positions = useMemo(() => {
+    // Seed offsets to generate independent random sequences for different properties
+    const SEED_OFFSET_DISTANCE = 1000;
+    const SEED_OFFSET_Y = 2000;
+    const SEED_OFFSET_SCALE = 3000;
+
+    // Simple deterministic pseudo-random function using sine-based algorithm
+    // Magic numbers (12.9898, 78.233, 43758.5453) are standard GLSL random constants
     const seededRandom = (seed: number) => {
       const x = Math.sin(seed * 12.9898 + 78.233) * 43758.5453;
       return x - Math.floor(x);
@@ -239,12 +246,12 @@ function AsteroidBelt() {
     
     return Array.from({ length: count }, (_, i) => {
       const angle = seededRandom(i) * Math.PI * 2;
-      const distance = 9.5 + seededRandom(i + 1000) * 1.5;
+      const distance = 9.5 + seededRandom(i + SEED_OFFSET_DISTANCE) * 1.5;
       return {
         x: Math.cos(angle) * distance,
         z: Math.sin(angle) * distance,
-        y: (seededRandom(i + 2000) - 0.5) * 0.5,
-        scale: 0.02 + seededRandom(i + 3000) * 0.04,
+        y: (seededRandom(i + SEED_OFFSET_Y) - 0.5) * 0.5,
+        scale: 0.02 + seededRandom(i + SEED_OFFSET_SCALE) * 0.04,
       };
     });
   }, [count]);

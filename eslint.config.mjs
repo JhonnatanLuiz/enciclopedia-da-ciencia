@@ -17,9 +17,8 @@ const eslintConfig = defineConfig([
   {
     rules: {
       // Allow setState in useEffect for client-side initialization (common Next.js pattern)
+      // This is a standard pattern for hydration-safe client-side state initialization
       "react-hooks/set-state-in-effect": "off",
-      // Allow impure functions during render for specific cases like deterministic seeding
-      "react-hooks/purity": "off",
       // Allow unescaped entities in JSX - quotes are intentional in educational content
       "react/no-unescaped-entities": "off",
     },
