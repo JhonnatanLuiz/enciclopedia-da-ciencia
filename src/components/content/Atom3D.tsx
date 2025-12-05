@@ -1,7 +1,7 @@
 'use client';
 
-import { Canvas, useFrame, extend } from '@react-three/fiber';
-import { OrbitControls, Sphere, Trail, Float, MeshDistortMaterial, GradientTexture, Sparkles, Line } from '@react-three/drei';
+import { Canvas, useFrame } from '@react-three/fiber';
+import { OrbitControls, Trail, Float, MeshDistortMaterial, Sparkles, Line } from '@react-three/drei';
 import { useRef, useMemo, Suspense } from 'react';
 import * as THREE from 'three';
 
