@@ -92,6 +92,8 @@ A **Enciclopédia da Ciência** é uma aplicação web moderna desenvolvida com 
 - [x] **Conteúdo Planeta Terra** - Introdução completa com imagens e vídeo
 - [x] **Página Sistema Solar Completa** - Os 8 planetas, planetas anões, cometas, satélites naturais
 - [x] **Página Estrutura da Terra** - Camadas, infográfico, vídeo educativo e carousel de imagens
+- [x] **Página Rotação da Terra** - Modelo 3D interativo, infográficos e galeria
+- [x] **Página Vulcões** - Modelo 3D cross-section, anatomia detalhada e tipos de vulcões
 - [x] **Galeria de Imagens** - Imagens de planetas, luas, cometas com API dedicada
 - [x] **Carousel de Imagens** - Componente com autoplay, controles manuais e indicadores
 - [x] **Infográficos Educativos** - Imagens informativas com dados científicos

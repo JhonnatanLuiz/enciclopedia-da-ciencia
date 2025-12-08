@@ -7,6 +7,43 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ---
 
+## [0.5.0-beta] - 2025-12-07
+
+### 🌋 Nova Página: Vulcões + Visualização 3D Cross-Section
+
+Esta versão introduz a página "Vulcões", trazendo uma experiência imersiva com visualizações 3D educativas, diagramas de anatomia interativos e conteúdo rico sobre vulcanologia.
+
+### ✨ Adicionado
+
+#### Página Vulcões (`/capitulo/planeta-terra/vulcoes`)
+
+**Visualizações 3D Duplas**
+- **Sketchfab Embed** - Integração com modelo realista ("The Volcano" por Cozmoth) para visualização externa de uma erupção.
+- **Vulcao3D (Cross-Section)** - Componente proprietário reescrito para mostrar o **corte transversal** do vulcão.
+  - Vizualização interna da Câmara Magmática, Chaminés e Camadas.
+  - **Interativo**: Tooltips flutuantes explicam cada parte ao passar o mouse.
+  - **Estilo Educativo**: Design estilizado para facilitar a compreensão das estruturas.
+
+**Conteúdo Científico**
+- **Anatomia Detalhada** - Seção explicativa interativa sincronizada com o modelo 3D.
+- **Tipos de Vulcões** - Cards informativos sobre Vulcão-Escudo, Estratovulcão, Cone de Cinzas e Caldera.
+- **Dados Explosivos** - Estatísticas sobre temperatura, quantidade de vulcões ativos e índices VEI.
+- **Curiosidades** - Fatos sobre raios vulcânicos, solo fértil e sons históricos.
+- **Vídeo Educativo** - Player YouTube incorporado.
+
+#### Novos Componentes
+- **Vulcao3D.tsx** (`src/components/content/`) - Modelo 3D de corte transversal com:
+  - Geometria procedural (Three.js) otimizada com `useMemo`.
+  - Sistema de partículas para fumaça (low-poly).
+  - Annotations (`<Html>`) para tooltips 3D.
+
+### 🔧 Técnico
+
+- **Otimização 3D** - Memoização de geometrias pesadas (`TubeGeometry`, `CatmullRomCurve3`) para evitar re-renders desnecessários.
+- **Loading States** - Fallbacks visuais ("Carregando Modelo 3D...") adicionados aos imports dinâmicos (`next/dynamic`) para melhor UX.
+- **Refatoração de Layout** - Grid responsivo na seção de anatomia para acomodar lista detalhada e modelo 3D lado a lado.
+- **Correção de Assets** - Remoção de código morto e textos de debug da interface.
+
 ## [0.4.3-beta] - 2025-12-05
 
 ### 🎨 Correção de Visibilidade Light/Dark Mode
