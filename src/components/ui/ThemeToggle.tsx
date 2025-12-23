@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 
 interface ThemeToggleProps {
   className?: string;
@@ -11,7 +11,7 @@ export default function ThemeToggle({ className = '' }: ThemeToggleProps) {
   const [mounted, setMounted] = useState(false);
 
   // Sincroniza com o estado real do documento
-  useEffect(() => {
+  useLayoutEffect(() => {
     setMounted(true);
     
     // Verifica o tema atual do localStorage ou documento
