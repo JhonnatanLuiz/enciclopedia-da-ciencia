@@ -3,7 +3,27 @@ import Link from "next/link";
 import { FaArrowLeft, FaArrowRight, FaGlobeAfrica, FaGlobeAmericas, FaGlobeAsia, FaGlobeEurope, FaWater, FaSnowflake, FaMountain, FaTree, FaUsers, FaIndustry } from "react-icons/fa";
 import { GiAfrica, GiSouthAmerica, GiEarthAsiaOceania, GiEuropeanFlag, GiIsland, GiIceberg, GiDesert, GiForest, GiMountainCave, GiCoral, GiPenguin, GiElephant, GiKangaroo } from "react-icons/gi";
 import { MdPublic, MdTerrain, MdNaturePeople } from "react-icons/md";
+import ImageCarousel from "@/components/ui/ImageCarousel";
 import ThemeToggle from "@/components/ui/ThemeToggle";
+
+const africaImagens = [
+  "/images/continentes/africa/Cairo_e_as_Piramides_de_Gize.png",
+  "/images/continentes/africa/Rio_Nilo_e_Esfinge.png",
+  "/images/continentes/africa/Deserto_do_Saara.png",
+  "/images/continentes/africa/Monte_Kilimanjaro.png",
+  "/images/continentes/africa/Cataratas_Vitoria.png",
+  "/images/continentes/africa/Delta_do_Okavango.png",
+  "/images/continentes/africa/Parque_Nacional_do_Serengeti_e_Maasai_Mara.png",
+  "/images/continentes/africa/Parque_Nacional_Kruger.png",
+  "/images/continentes/africa/Cidade_do_Cabo_Africa_do_sul.png",
+  "/images/continentes/africa/Marraquexe_Marrocos.png",
+  "/images/continentes/africa/Djenne_Mali.png",
+  "/images/continentes/africa/Lalibela_Etiopia.png",
+  "/images/continentes/africa/Ilha_de_Zanzibar_Tanzania.png",
+];
+
+const africaInfograficoSrc = "/images/infograficos/africa-infografico.png";
+
 
 // Dados dos continentes
 const continentes = [
@@ -590,12 +610,65 @@ export default function Continentes() {
               </div>
             </div>
 
-            {/* Placeholder para futuras imagens/vídeos */}
-            <div className="bg-gray-200/30 dark:bg-slate-800/30 rounded-xl p-6 border border-dashed border-gray-400/50 dark:border-slate-700/50 text-center">
-              <p className="text-gray-500 dark:text-slate-500 text-sm">
-                📷 Espaço reservado para galeria de imagens, infográficos e vídeos do continente {continente.nome}
-              </p>
-            </div>
+            {/* Mídias (inicialmente: África) */}
+            {continente.nome === "África" ? (
+              <div className="bg-gray-200/30 dark:bg-slate-800/30 rounded-xl p-6 border border-gray-300/50 dark:border-slate-700/50">
+                <div className="flex items-center justify-between gap-4 mb-4">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
+                    <span>🎬</span>
+                    Mídias da África
+                  </h3>
+                  <span className={`text-sm ${continente.textCor}`}>{africaImagens.length} fotos</span>
+                </div>
+
+                <p className="text-gray-600 dark:text-slate-400 text-sm mb-6">
+                  Uma amostra de paisagens naturais e marcos culturais do continente.
+                </p>
+
+                <div className="space-y-8">
+                  <div>
+                    <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-3">🎥 Vídeo: África</h4>
+                    <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-gray-200 dark:border-slate-700/50 bg-gray-100 dark:bg-slate-900">
+                      <iframe
+                        className="absolute inset-0 w-full h-full"
+                        src="https://www.youtube.com/embed/QpiSthmUjk8"
+                        title="África - Enciclopédia da Ciência"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-3">🧾 Infográfico: Retrato da África</h4>
+                    <figure className="rounded-xl overflow-hidden border border-gray-200 dark:border-slate-700/50 bg-white dark:bg-slate-900/40">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={africaInfograficoSrc}
+                        alt="Infográfico: Retrato da África"
+                        loading="lazy"
+                        className="w-full h-auto"
+                      />
+                    </figure>
+                  </div>
+
+                  <div>
+                    <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-3">🖼️ Galeria em carousel</h4>
+                    <ImageCarousel images={africaImagens} altPrefix="África - Galeria" />
+                    <p className="text-sm text-center mt-6 text-gray-500 dark:text-slate-500">
+                      💡 Use os controles para navegar manualmente ou deixe em reprodução automática.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="bg-gray-200/30 dark:bg-slate-800/30 rounded-xl p-6 border border-dashed border-gray-400/50 dark:border-slate-700/50 text-center">
+                <p className="text-gray-500 dark:text-slate-500 text-sm">
+                  📷 Espaço reservado para galeria de imagens, infográficos e vídeos do continente {continente.nome}
+                </p>
+              </div>
+            )}
           </section>
         ))}
 

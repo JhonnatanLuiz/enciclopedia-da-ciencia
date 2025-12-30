@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Footer() {
   return (
     <footer className="bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white mt-auto">
@@ -19,16 +21,16 @@ export default function Footer() {
             <h4 className="font-semibold mb-3 text-cyan-400">Links Rápidos</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <a href="/sumario" className="hover:text-white transition-colors">📚 Sumário</a>
+                <Link href="/sumario" className="hover:text-white transition-colors">📚 Sumário</Link>
               </li>
               <li>
-                <a href="/buscar" className="hover:text-white transition-colors">🔍 Buscar</a>
+                <Link href="/buscar" className="hover:text-white transition-colors">🔍 Buscar</Link>
               </li>
               <li>
-                <a href="/capitulo/planeta-terra" className="hover:text-white transition-colors">🌍 Planeta Terra</a>
+                <Link href="/capitulo/planeta-terra" className="hover:text-white transition-colors">🌍 Planeta Terra</Link>
               </li>
               <li>
-                <a href="/capitulo/espaco-tempo" className="hover:text-white transition-colors">🌌 Espaço e Tempo</a>
+                <Link href="/capitulo/espaco-tempo" className="hover:text-white transition-colors">🌌 Espaço e Tempo</Link>
               </li>
             </ul>
           </div>
