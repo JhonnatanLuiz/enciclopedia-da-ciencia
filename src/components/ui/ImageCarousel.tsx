@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { FaPlay, FaPause, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-const images = [
+const defaultImages = [
   "/images/estrutura-terra/1.jpg",
   "/images/estrutura-terra/2.jpg",
   "/images/estrutura-terra/3.jpg",
@@ -16,9 +16,21 @@ const images = [
   "/images/estrutura-terra/12.jpg",
 ];
 
-export default function ImageCarousel() {
+type ImageCarouselProps = {
+  images?: string[];
+  altPrefix?: string;
+};
+
+export default function ImageCarousel({
+  images = defaultImages,
+  altPrefix = "O Interior do Nosso Planeta",
+}: ImageCarouselProps) {
   const [current, setCurrent] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
+
+  useEffect(() => {
+    setCurrent(0);
+  }, [images]);
 
   useEffect(() => {
     if (!isPlaying) return;
@@ -26,7 +38,7 @@ export default function ImageCarousel() {
       setCurrent((prev) => (prev + 1) % images.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, [isPlaying]);
+  }, [isPlaying, images.length]);
 
   const prevImage = () => setCurrent((prev) => (prev - 1 + images.length) % images.length);
   const nextImage = () => setCurrent((prev) => (prev + 1) % images.length);
@@ -34,18 +46,18 @@ export default function ImageCarousel() {
   return (
     <div className="w-full max-w-4xl mx-auto">
       {/* Container da imagem */}
-      <div className="relative rounded-2xl overflow-hidden bg-slate-900/50 border border-slate-700/50 shadow-2xl">
+      <div className="relative rounded-2xl overflow-hidden bg-white/70 dark:bg-slate-900/50 border border-gray-200 dark:border-slate-700/50 shadow-2xl">
         {/* Imagem principal */}
         <div className="relative aspect-[4/3] md:aspect-video">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={images[current]}
-            alt={`O Interior do Nosso Planeta - Página ${current + 1}`}
-            className="w-full h-full object-contain bg-slate-950"
+            alt={`${altPrefix} - Página ${current + 1}`}
+            className="w-full h-full object-contain bg-gray-100 dark:bg-slate-950"
           />
           
           {/* Overlay com gradiente nas bordas */}
-          <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-slate-900/30 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-white/30 dark:from-slate-900/30 via-transparent to-transparent"></div>
         </div>
 
         {/* Controles sobre a imagem (mobile-friendly) */}
