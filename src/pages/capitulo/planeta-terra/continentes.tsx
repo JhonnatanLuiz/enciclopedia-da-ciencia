@@ -618,21 +618,20 @@ export default function Continentes() {
                     <span>🎬</span>
                     Mídias da África
                   </h3>
-                  <span className={`text-sm ${continente.textCor}`}>{africaImagens.length} fotos</span>
                 </div>
 
                 <p className="text-gray-600 dark:text-slate-400 text-sm mb-6">
-                  Uma amostra de paisagens naturais e marcos culturais do continente.
+                  Assista ao vídeo abaixo e veja também o infográfico e a galeria de imagens.
                 </p>
 
                 <div className="space-y-8">
                   <div>
-                    <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-3">🎥 Vídeo: África</h4>
+                    <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-3">🎥 Vídeo: África, um continente de superlativos</h4>
                     <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-gray-200 dark:border-slate-700/50 bg-gray-100 dark:bg-slate-900">
                       <iframe
                         className="absolute inset-0 w-full h-full"
                         src="https://www.youtube.com/embed/QpiSthmUjk8"
-                        title="África - Enciclopédia da Ciência"
+                        title="África, um continente de superlativos"
                         loading="lazy"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowFullScreen
@@ -654,7 +653,10 @@ export default function Continentes() {
                   </div>
 
                   <div>
-                    <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-3">🖼️ Galeria em carousel</h4>
+                    <div className="flex items-baseline justify-between gap-4 mb-3">
+                      <h4 className="text-lg font-bold text-gray-900 dark:text-white">🖼️ Galeria em carousel</h4>
+                      <span className="text-sm text-gray-500 dark:text-slate-500">{africaImagens.length} fotos</span>
+                    </div>
                     <ImageCarousel images={africaImagens} altPrefix="África - Galeria" />
                     <p className="text-sm text-center mt-6 text-gray-500 dark:text-slate-500">
                       💡 Use os controles para navegar manualmente ou deixe em reprodução automática.
