@@ -24,6 +24,9 @@
 .DS_Store
 *.pem
 
+# editor (VS Code)
+.vscode/tasks.json
+
 # debug
 npm-debug.log*
 yarn-debug.log*
