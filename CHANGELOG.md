@@ -7,6 +7,23 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ---
 
+## [0.5.1-beta] - 2026-01-05
+
+### ✨ Adicionado
+
+- **Continentes: Mídias da África** (vídeo + infográfico + carousel de imagens).
+- **Continentes: Mídias da América** (vídeo + infográfico + carousel de imagens).
+- **Legendas no carousel** derivadas do nome do arquivo (exibidas abaixo da imagem).
+
+### 🧰 Conteúdo / Assets
+
+- Imagens da América adicionadas em `public/images/continentes/america/` com nomes normalizados (sem acentos e sem espaços).
+- Infográfico da América adicionado em `public/images/infograficos/america_infografico.png`.
+
+### 📚 Documentação
+
+- Guia de versionamento e guia de mídias para Continentes adicionados em `.github/prompts/`.
+
 ## [0.5.0-beta] - 2025-12-07
 
 ### 🌋 Nova Página: Vulcões + Visualização 3D Cross-Section
