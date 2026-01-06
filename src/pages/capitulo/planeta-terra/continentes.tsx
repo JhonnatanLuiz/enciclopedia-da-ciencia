@@ -664,7 +664,7 @@ export default function Continentes() {
                     <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-gray-200 dark:border-slate-700/50 bg-gray-100 dark:bg-slate-900">
                       <iframe
                         className="absolute inset-0 w-full h-full"
-                        src="https://www.youtube.com/embed/QpiSthmUjk8"
+                        src="https://www.youtube-nocookie.com/embed/QpiSthmUjk8"
                         title="África, um continente de superlativos"
                         loading="lazy"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -681,6 +681,9 @@ export default function Continentes() {
                         src={africaInfograficoSrc}
                         alt="Infográfico: Retrato da África"
                         loading="lazy"
+                        decoding="async"
+                        width={1600}
+                        height={900}
                         className="w-full h-auto"
                       />
                     </figure>
@@ -721,7 +724,7 @@ export default function Continentes() {
                     <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-gray-200 dark:border-slate-700/50 bg-gray-100 dark:bg-slate-900">
                       <iframe
                         className="absolute inset-0 w-full h-full"
-                        src="https://www.youtube.com/embed/BD1Voncauz4"
+                        src="https://www.youtube-nocookie.com/embed/BD1Voncauz4"
                         title="As Américas: Um Continente de Contraste"
                         loading="lazy"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -738,6 +741,9 @@ export default function Continentes() {
                         src={americaInfograficoSrc}
                         alt="Infográfico: Retrato das Américas"
                         loading="lazy"
+                        decoding="async"
+                        width={1600}
+                        height={900}
                         className="w-full h-auto"
                       />
                     </figure>

@@ -57,6 +57,10 @@ export default function ImageCarousel({
           <img
             src={images[current]}
             alt={`${altPrefix} - Página ${current + 1}`}
+            width={1600}
+            height={900}
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-contain bg-gray-100 dark:bg-slate-950"
           />
           
@@ -75,7 +79,8 @@ export default function ImageCarousel({
         <div className="absolute inset-y-0 left-0 flex items-center">
           <button
             onClick={prevImage}
-            className="p-2 md:p-3 m-2 bg-slate-900/70 hover:bg-slate-800 backdrop-blur-sm rounded-full text-white transition-all hover:scale-110 border border-slate-700/50"
+            type="button"
+            className="m-2 min-w-11 min-h-11 flex items-center justify-center bg-slate-900/70 hover:bg-slate-800 backdrop-blur-sm rounded-full text-white transition-all hover:scale-110 border border-slate-700/50"
             aria-label="Imagem anterior"
           >
             <FaChevronLeft className="text-sm md:text-base" />
@@ -85,7 +90,8 @@ export default function ImageCarousel({
         <div className="absolute inset-y-0 right-0 flex items-center">
           <button
             onClick={nextImage}
-            className="p-2 md:p-3 m-2 bg-slate-900/70 hover:bg-slate-800 backdrop-blur-sm rounded-full text-white transition-all hover:scale-110 border border-slate-700/50"
+            type="button"
+            className="m-2 min-w-11 min-h-11 flex items-center justify-center bg-slate-900/70 hover:bg-slate-800 backdrop-blur-sm rounded-full text-white transition-all hover:scale-110 border border-slate-700/50"
             aria-label="Próxima imagem"
           >
             <FaChevronRight className="text-sm md:text-base" />
@@ -104,18 +110,19 @@ export default function ImageCarousel({
       {/* Barra de controles */}
       <div className="mt-4 flex flex-col sm:flex-row items-center justify-between gap-4 px-2">
         {/* Numeração */}
-        <p className="text-sm text-slate-400 order-2 sm:order-1">
-          <span className="text-cyan-400 font-semibold">{current + 1}</span>
+        <p className="text-sm text-gray-700 dark:text-slate-400 order-2 sm:order-1">
+          <span className="text-cyan-600 dark:text-cyan-400 font-semibold">{current + 1}</span>
           <span className="mx-1">/</span>
           <span>{images.length}</span>
-          <span className="ml-2 text-slate-500">imagens</span>
+          <span className="ml-2 text-gray-600 dark:text-slate-500">imagens</span>
         </p>
 
         {/* Botões de controle */}
         <div className="flex items-center gap-2 order-1 sm:order-2">
           <button
             onClick={prevImage}
-            className="flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 rounded-lg text-slate-300 hover:text-white transition-colors border border-slate-700/50 text-sm"
+            type="button"
+            className="min-h-11 flex items-center gap-2 px-4 py-2 bg-gray-200/70 hover:bg-gray-200 dark:bg-slate-800 dark:hover:bg-slate-700 rounded-lg text-gray-800 hover:text-gray-900 dark:text-slate-300 dark:hover:text-white transition-colors border border-gray-300/60 dark:border-slate-700/50 text-sm"
           >
             <FaChevronLeft className="text-xs" />
             <span className="hidden sm:inline">Anterior</span>
@@ -123,10 +130,11 @@ export default function ImageCarousel({
           
           <button
             onClick={() => setIsPlaying(!isPlaying)}
+            type="button"
             className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors border text-sm ${
               isPlaying 
                 ? "bg-cyan-600 hover:bg-cyan-500 text-white border-cyan-500/50" 
-                : "bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border-slate-700/50"
+                : "bg-gray-200/70 hover:bg-gray-200 text-gray-800 hover:text-gray-900 border-gray-300/60 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-300 dark:hover:text-white dark:border-slate-700/50"
             }`}
           >
             {isPlaying ? (
@@ -144,7 +152,8 @@ export default function ImageCarousel({
           
           <button
             onClick={nextImage}
-            className="flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 rounded-lg text-slate-300 hover:text-white transition-colors border border-slate-700/50 text-sm"
+            type="button"
+            className="min-h-11 flex items-center gap-2 px-4 py-2 bg-gray-200/70 hover:bg-gray-200 dark:bg-slate-800 dark:hover:bg-slate-700 rounded-lg text-gray-800 hover:text-gray-900 dark:text-slate-300 dark:hover:text-white transition-colors border border-gray-300/60 dark:border-slate-700/50 text-sm"
           >
             <span className="hidden sm:inline">Próxima</span>
             <FaChevronRight className="text-xs" />
@@ -157,13 +166,19 @@ export default function ImageCarousel({
             <button
               key={index}
               onClick={() => setCurrent(index)}
-              className={`w-2 h-2 rounded-full transition-all ${
-                index === current 
-                  ? "bg-cyan-400 w-4" 
-                  : "bg-slate-600 hover:bg-slate-500"
-              }`}
+              type="button"
+              aria-current={index === current ? "true" : undefined}
+              className="min-w-11 min-h-11 flex items-center justify-center rounded-full group"
               aria-label={`Ir para imagem ${index + 1}`}
-            />
+            >
+              <span
+                className={`block rounded-full transition-all ${
+                  index === current
+                    ? "w-4 h-2 bg-cyan-400"
+                    : "w-2 h-2 bg-slate-600 group-hover:bg-slate-500"
+                }`}
+              />
+            </button>
           ))}
         </div>
       </div>
