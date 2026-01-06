@@ -161,7 +161,7 @@ export default function ImageCarousel({
         </div>
 
         {/* Indicadores de pontos */}
-        <div className="hidden md:flex items-center gap-1 order-3">
+        <div className="hidden md:flex flex-1 min-w-0 flex-wrap items-center justify-center gap-1 order-3">
           {images.map((_, index) => (
             <button
               key={index}
