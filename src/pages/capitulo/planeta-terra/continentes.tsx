@@ -22,7 +22,32 @@ const africaImagens = [
   "/images/continentes/africa/Ilha_de_Zanzibar_Tanzania.png",
 ];
 
+const americaImagens = [
+  "/images/continentes/america/canal_do_panama_panama.png",
+  "/images/continentes/america/cartagena_das_indias_colombia.png",
+  "/images/continentes/america/cataratas_do_iguacu_brasil_argentina.png",
+  "/images/continentes/america/chichen_itza_mexico.png",
+  "/images/continentes/america/cristo_redentor_brasil_rio.png",
+  "/images/continentes/america/estatua_da_liberdade_eua_nova_york.png",
+  "/images/continentes/america/grand_canyon_eua_arizona.png",
+  "/images/continentes/america/ilha_de_pascoa_rapa_nui_chile.png",
+  "/images/continentes/america/ilhas_galapagos_equador.png",
+  "/images/continentes/america/lencois_maranhenses_brasil_maranhao.png",
+  "/images/continentes/america/los_glaciares_perito_moreno_argentina.png",
+  "/images/continentes/america/machu_picchu_peru.png",
+  "/images/continentes/america/niagara_falls_eua_canada.png",
+  "/images/continentes/america/parque_nacional_banff_canada_alberta.png",
+  "/images/continentes/america/parque_nacional_torres_del_paine_chile.png",
+  "/images/continentes/america/parque_nacional_yellowstone_eua.png",
+  "/images/continentes/america/ponte_estaiada_sao_paulo_brasil.png",
+  "/images/continentes/america/salar_de_uyun_bolivia.png",
+  "/images/continentes/america/san_andres_ilha_colombia.png",
+  "/images/continentes/america/times_square_eua_nova_york.png",
+  "/images/continentes/america/valle_de_la_luna_chile_deserto_do_atacama.png",
+];
+
 const africaInfograficoSrc = "/images/infograficos/africa-infografico.png";
+const americaInfograficoSrc = "/images/infograficos/america_infografico.png";
 
 function legendaDeImagem(src: string) {
   const arquivo = decodeURIComponent(src.split("/").pop() ?? src);
@@ -703,6 +728,34 @@ export default function Continentes() {
                         allowFullScreen
                       />
                     </div>
+                  </div>
+
+                  <div>
+                    <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-3">🧾 Infográfico: Retrato das Américas</h4>
+                    <figure className="rounded-xl overflow-hidden border border-gray-200 dark:border-slate-700/50 bg-white dark:bg-slate-900/40">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={americaInfograficoSrc}
+                        alt="Infográfico: Retrato das Américas"
+                        loading="lazy"
+                        className="w-full h-auto"
+                      />
+                    </figure>
+                  </div>
+
+                  <div>
+                    <div className="flex items-baseline justify-between gap-4 mb-3">
+                      <h4 className="text-lg font-bold text-gray-900 dark:text-white">🖼️ Galeria em carousel</h4>
+                      <span className="text-sm text-gray-500 dark:text-slate-500">{americaImagens.length} fotos</span>
+                    </div>
+                    <ImageCarousel
+                      images={americaImagens}
+                      altPrefix="América - Galeria"
+                      getCaption={(src) => legendaDeImagem(src)}
+                    />
+                    <p className="text-sm text-center mt-6 text-gray-500 dark:text-slate-500">
+                      💡 Use os controles para navegar manualmente ou deixe em reprodução automática.
+                    </p>
                   </div>
                 </div>
               </div>
