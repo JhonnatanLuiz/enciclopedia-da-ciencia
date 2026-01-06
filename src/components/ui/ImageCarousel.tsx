@@ -19,14 +19,18 @@ const defaultImages = [
 type ImageCarouselProps = {
   images?: string[];
   altPrefix?: string;
+  getCaption?: (src: string, index: number) => string;
 };
 
 export default function ImageCarousel({
   images = defaultImages,
   altPrefix = "O Interior do Nosso Planeta",
+  getCaption,
 }: ImageCarouselProps) {
   const [current, setCurrent] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
+
+  const caption = getCaption ? getCaption(images[current], current) : undefined;
 
   useEffect(() => {
     setCurrent(0);
@@ -59,6 +63,13 @@ export default function ImageCarousel({
           {/* Overlay com gradiente nas bordas */}
           <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-white/30 dark:from-slate-900/30 via-transparent to-transparent"></div>
         </div>
+
+        {/* Legenda */}
+        {caption ? (
+          <div className="px-4 py-3 border-t border-gray-200 dark:border-slate-700/50 bg-white/60 dark:bg-slate-900/30">
+            <p className="text-sm text-gray-700 dark:text-slate-300 text-center">{caption}</p>
+          </div>
+        ) : null}
 
         {/* Controles sobre a imagem (mobile-friendly) */}
         <div className="absolute inset-y-0 left-0 flex items-center">

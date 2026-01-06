@@ -24,6 +24,15 @@ const africaImagens = [
 
 const africaInfograficoSrc = "/images/infograficos/africa-infografico.png";
 
+function legendaDeImagem(src: string) {
+  const arquivo = decodeURIComponent(src.split("/").pop() ?? src);
+  return arquivo
+    .replace(/\.(png|jpg|jpeg|webp)$/i, "")
+    .replace(/_/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 
 // Dados dos continentes
 const continentes = [
@@ -610,7 +619,7 @@ export default function Continentes() {
               </div>
             </div>
 
-            {/* Mídias (inicialmente: África) */}
+            {/* Mídias (inicialmente: África e América) */}
             {continente.nome === "África" ? (
               <div className="bg-gray-200/30 dark:bg-slate-800/30 rounded-xl p-6 border border-gray-300/50 dark:border-slate-700/50">
                 <div className="flex items-center justify-between gap-4 mb-4">
@@ -657,10 +666,43 @@ export default function Continentes() {
                       <h4 className="text-lg font-bold text-gray-900 dark:text-white">🖼️ Galeria em carousel</h4>
                       <span className="text-sm text-gray-500 dark:text-slate-500">{africaImagens.length} fotos</span>
                     </div>
-                    <ImageCarousel images={africaImagens} altPrefix="África - Galeria" />
+                    <ImageCarousel
+                      images={africaImagens}
+                      altPrefix="África - Galeria"
+                      getCaption={(src) => legendaDeImagem(src)}
+                    />
                     <p className="text-sm text-center mt-6 text-gray-500 dark:text-slate-500">
                       💡 Use os controles para navegar manualmente ou deixe em reprodução automática.
                     </p>
+                  </div>
+                </div>
+              </div>
+            ) : continente.nome === "América" ? (
+              <div className="bg-gray-200/30 dark:bg-slate-800/30 rounded-xl p-6 border border-gray-300/50 dark:border-slate-700/50">
+                <div className="flex items-center justify-between gap-4 mb-4">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
+                    <span>🎬</span>
+                    Mídias da América
+                  </h3>
+                </div>
+
+                <p className="text-gray-600 dark:text-slate-400 text-sm mb-6">
+                  Assista ao vídeo abaixo para conhecer melhor o continente americano.
+                </p>
+
+                <div className="space-y-8">
+                  <div>
+                    <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-3">🎥 Vídeo: As Américas: Um Continente de Contraste</h4>
+                    <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-gray-200 dark:border-slate-700/50 bg-gray-100 dark:bg-slate-900">
+                      <iframe
+                        className="absolute inset-0 w-full h-full"
+                        src="https://www.youtube.com/embed/BD1Voncauz4"
+                        title="As Américas: Um Continente de Contraste"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
