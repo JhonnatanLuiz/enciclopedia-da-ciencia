@@ -2,7 +2,7 @@
 
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Stars, Html, Ring } from "@react-three/drei";
-import { useRef, useState, Suspense } from "react";
+import { useRef, useState, Suspense, useMemo } from "react";
 import * as THREE from "three";
 
 // Dados dos planetas do Sistema Solar
@@ -230,16 +230,31 @@ function AsteroidBelt() {
   const asteroids = useRef<THREE.InstancedMesh>(null);
   const count = 200;
 
-  const positions = Array.from({ length: count }, () => {
-    const angle = Math.random() * Math.PI * 2;
-    const distance = 9.5 + Math.random() * 1.5;
-    return {
-      x: Math.cos(angle) * distance,
-      z: Math.sin(angle) * distance,
-      y: (Math.random() - 0.5) * 0.5,
-      scale: 0.02 + Math.random() * 0.04,
+  // Pre-generate deterministic positions using a seeded approach
+  const positions = useMemo(() => {
+    // Seed offsets to generate independent random sequences for different properties
+    const SEED_OFFSET_DISTANCE = 1000;
+    const SEED_OFFSET_Y = 2000;
+    const SEED_OFFSET_SCALE = 3000;
+
+    // Simple deterministic pseudo-random function using sine-based algorithm
+    // Magic numbers (12.9898, 78.233, 43758.5453) are standard GLSL random constants
+    const seededRandom = (seed: number) => {
+      const x = Math.sin(seed * 12.9898 + 78.233) * 43758.5453;
+      return x - Math.floor(x);
     };
-  });
+    
+    return Array.from({ length: count }, (_, i) => {
+      const angle = seededRandom(i) * Math.PI * 2;
+      const distance = 9.5 + seededRandom(i + SEED_OFFSET_DISTANCE) * 1.5;
+      return {
+        x: Math.cos(angle) * distance,
+        z: Math.sin(angle) * distance,
+        y: (seededRandom(i + SEED_OFFSET_Y) - 0.5) * 0.5,
+        scale: 0.02 + seededRandom(i + SEED_OFFSET_SCALE) * 0.04,
+      };
+    });
+  }, [count]);
 
   useFrame(({ clock }) => {
     if (asteroids.current) {
