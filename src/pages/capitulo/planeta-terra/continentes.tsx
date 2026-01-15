@@ -48,6 +48,7 @@ const americaImagens = [
 
 const africaInfograficoSrc = "/images/infograficos/africa-infografico.png";
 const americaInfograficoSrc = "/images/infograficos/america_infografico.png";
+const asiaInfograficoSrc = "/images/infograficos/asia_infografico.png";
 
 function legendaDeImagem(src: string) {
   const arquivo = decodeURIComponent(src.split("/").pop() ?? src);
@@ -794,12 +795,19 @@ export default function Continentes() {
                   </div>
 
                   <div>
-                    <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-3">🧾 Infográfico</h4>
-                    <div className="rounded-xl p-5 border border-dashed border-gray-400/60 dark:border-slate-700/60 bg-gray-100/40 dark:bg-slate-900/20 text-center">
-                      <p className="text-sm text-gray-600 dark:text-slate-400">
-                        Espaço reservado para o infográfico da Ásia.
-                      </p>
-                    </div>
+                    <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-3">🧾 Infográfico: Retrato da Ásia</h4>
+                    <figure className="rounded-xl overflow-hidden border border-gray-200 dark:border-slate-700/50 bg-white dark:bg-slate-900/40">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={asiaInfograficoSrc}
+                        alt="Infográfico: Retrato da Ásia"
+                        loading="lazy"
+                        decoding="async"
+                        width={1600}
+                        height={900}
+                        className="w-full h-auto"
+                      />
+                    </figure>
                   </div>
 
                   <div>

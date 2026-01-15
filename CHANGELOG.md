@@ -11,7 +11,7 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ### ✨ Adicionado
 
-- **Continentes: Mídias da Ásia** (vídeo).
+- **Continentes: Mídias da Ásia** (vídeo + infográfico).
 
 ### 🔧 Corrigido
 
@@ -45,6 +45,7 @@ Esta versão introduz a página "Vulcões", trazendo uma experiência imersiva c
 #### Página Vulcões (`/capitulo/planeta-terra/vulcoes`)
 
 **Visualizações 3D Duplas**
+
 - **Sketchfab Embed** - Integração com modelo realista ("The Volcano" por Cozmoth) para visualização externa de uma erupção.
 - **Vulcao3D (Cross-Section)** - Componente proprietário reescrito para mostrar o **corte transversal** do vulcão.
   - Vizualização interna da Câmara Magmática, Chaminés e Camadas.
@@ -52,6 +53,7 @@ Esta versão introduz a página "Vulcões", trazendo uma experiência imersiva c
   - **Estilo Educativo**: Design estilizado para facilitar a compreensão das estruturas.
 
 **Conteúdo Científico**
+
 - **Anatomia Detalhada** - Seção explicativa interativa sincronizada com o modelo 3D.
 - **Tipos de Vulcões** - Cards informativos sobre Vulcão-Escudo, Estratovulcão, Cone de Cinzas e Caldera.
 - **Dados Explosivos** - Estatísticas sobre temperatura, quantidade de vulcões ativos e índices VEI.
@@ -59,6 +61,7 @@ Esta versão introduz a página "Vulcões", trazendo uma experiência imersiva c
 - **Vídeo Educativo** - Player YouTube incorporado.
 
 #### Novos Componentes
+
 - **Vulcao3D.tsx** (`src/components/content/`) - Modelo 3D de corte transversal com:
   - Geometria procedural (Three.js) otimizada com `useMemo`.
   - Sistema de partículas para fumaça (low-poly).
@@ -80,6 +83,7 @@ Esta versão corrige problemas de visibilidade de elementos em modo claro (light
 ### ✨ Adicionado
 
 #### Documentação de Padrões de Cores
+
 - **docs/THEME-PATTERNS.md** - Novo documento de referência completo
 - Padrões de cores para textos (títulos, corpo, secundário, acentuados)
 - Padrões de gradientes para cards de dados
@@ -92,6 +96,7 @@ Esta versão corrige problemas de visibilidade de elementos em modo claro (light
 ### 🔧 Corrigido
 
 #### Página `rotacao-terra.tsx`
+
 - **Cards "Consequências da Rotação"** - Títulos e descrições agora visíveis em light mode
   - Títulos: `text-gray-900 dark:text-white` (era `text-white`)
   - Descrições: `text-gray-700 dark:text-slate-300` (era `text-slate-300`)
@@ -103,6 +108,7 @@ Esta versão corrige problemas de visibilidade de elementos em modo claro (light
 - **Ponto da timeline** - `bg-gray-800 dark:bg-slate-900`
 
 #### Página `estrutura-terra.tsx`
+
 - **Seção "Geodínamo"** - Container e textos corrigidos
   - Container: `bg-gray-200/60 dark:bg-slate-800/60`
   - Texto: `text-gray-700 dark:text-slate-300`
@@ -114,6 +120,7 @@ Esta versão corrige problemas de visibilidade de elementos em modo claro (light
 - **Badge do Hero** - Adicionado gradiente light mode
 
 #### Página `sistema-solar.tsx`
+
 - **Sketchfab Embed** - `bg-gray-200/50 dark:bg-slate-900/50`
 - **Link Externo** - Cores light mode adicionadas
 - **Cards do Sol** - Títulos, valores e descrições corrigidos
@@ -122,6 +129,7 @@ Esta versão corrige problemas de visibilidade de elementos em modo claro (light
 - **Cards de Satélites** - Overlays e tooltips corrigidos
 
 #### Página `continentes.tsx`
+
 - **Dados dos Continentes** - textCor, bgCor, borderCor de todos os 6 continentes
   - África: `text-amber-600 dark:text-amber-400`
   - América: `text-emerald-600 dark:text-emerald-400`
@@ -135,22 +143,25 @@ Esta versão corrige problemas de visibilidade de elementos em modo claro (light
 ### 📋 Padrões Estabelecidos
 
 #### Cores de Texto
-| Uso | Light Mode | Dark Mode |
-|-----|------------|-----------|
-| Título | `text-gray-900` | `dark:text-white` |
-| Corpo | `text-gray-700` | `dark:text-slate-300` |
-| Secundário | `text-gray-600` | `dark:text-slate-400` |
-| Acentuado | `text-[cor]-600` | `dark:text-[cor]-400` |
+
+| Uso        | Light Mode       | Dark Mode             |
+| ---------- | ---------------- | --------------------- |
+| Título     | `text-gray-900`  | `dark:text-white`     |
+| Corpo      | `text-gray-700`  | `dark:text-slate-300` |
+| Secundário | `text-gray-600`  | `dark:text-slate-400` |
+| Acentuado  | `text-[cor]-600` | `dark:text-[cor]-400` |
 
 #### Gradientes de Cards
-| Light Mode | Dark Mode |
-|------------|-----------|
+
+| Light Mode                           | Dark Mode                                      |
+| ------------------------------------ | ---------------------------------------------- |
 | `from-[cor]-200/50 to-[cor2]-200/50` | `dark:from-[cor]-900/30 dark:to-[cor2]-900/30` |
 
 #### Fundos
-| Uso | Light Mode | Dark Mode |
-|-----|------------|-----------|
-| Card | `bg-gray-200/60` | `dark:bg-slate-800/60` |
+
+| Uso   | Light Mode       | Dark Mode              |
+| ----- | ---------------- | ---------------------- |
+| Card  | `bg-gray-200/60` | `dark:bg-slate-800/60` |
 | Seção | `bg-gray-200/50` | `dark:bg-slate-800/30` |
 
 ### 🔧 Técnico
@@ -173,11 +184,13 @@ Esta versão adiciona infográfico educativo, galeria de imagens com carousel e 
 ### ✨ Adicionado
 
 #### Infográfico Educativo
+
 - **Infográfico "A Terra em Movimento"** - Guia rápido sobre a rotação do planeta
 - Resumo visual de velocidade, inclinação axial, efeitos e variações
 - Layout consistente com a página estrutura-terra
 
 #### Galeria de Imagens com Carousel
+
 - **RotacaoTerraCarousel.tsx** - Novo componente de carousel com 15 imagens
 - Funcionalidades:
   - Autoplay com transição a cada 5 segundos
@@ -189,6 +202,7 @@ Esta versão adiciona infográfico educativo, galeria de imagens com carousel e 
 - Seção "A Terra em Movimento" com jornada científica pela rotação
 
 #### Vídeo Exclusivo
+
 - **Novo vídeo do canal YouTube** substituindo o vídeo genérico
 - URL: `https://youtu.be/ukkaTKdnfw4`
 - Título atualizado para "Vídeo Exclusivo"
@@ -213,6 +227,7 @@ Esta versão adiciona uma página completa e interativa sobre a Rotação da Ter
 #### Página Rotação da Terra (`/capitulo/planeta-terra/rotacao-terra`)
 
 **Visualização 3D Interativa**
+
 - **PlanetEarthRotation3D.tsx** - Componente React Three Fiber com:
   - Terra girando com eixo inclinado em 23,5°
   - Linha amarela indicando o eixo de rotação
@@ -222,6 +237,7 @@ Esta versão adiciona uma página completa e interativa sobre a Rotação da Ter
   - `OrbitControls` para interação do usuário
 
 **Conteúdo Científico Completo**
+
 - **Dados Científicos** - 4 cards: Período Sideral (23h 56m 4s), Velocidade no Equador (1.670 km/h), Inclinação Axial (23,5°), Velocidade Angular (465 m/s)
 - **Velocidade por Latitude** - Gráfico de barras do equador aos polos
 - **6 Consequências da Rotação** - Dia/Noite, Efeito Coriolis, Correntes Oceânicas, Padrões de Ventos, Achatamento Polar, Campo Magnético
@@ -232,11 +248,13 @@ Esta versão adiciona uma página completa e interativa sobre a Rotação da Ter
 - **Vídeo Educativo** - Player YouTube incorporado com design destacado
 
 **Navegação e Rodapé**
+
 - Link para página anterior: Estrutura da Terra
 - Link para próxima página: Continentes
 - Rodapé institucional padrão
 
 #### Novo Componente
+
 - **PlanetEarthRotation3D.tsx** (`src/components/content/`) - Componente 3D reutilizável da Terra rotacionando
 
 ### 🔧 Técnico
@@ -258,6 +276,7 @@ Esta versão padroniza os botões de navegação inferior e adiciona rodapé ins
 ### ✨ Adicionado
 
 #### Rodapé Institucional
+
 - **Novo texto institucional** em todas as páginas:
   - "Enciclopédia da Ciência 2025"
   - "Conteúdo Feito com ❤️ e ☕ por Jhonnatan Luiz"
@@ -265,6 +284,7 @@ Esta versão padroniza os botões de navegação inferior e adiciona rodapé ins
 - **Rodapé inline** adicionado em páginas de subcapítulos (introdução, sistema-solar, estrutura-terra)
 
 #### Navegação Padronizada
+
 - **Estilo unificado** de botões de navegação conforme página `estrutura-terra`:
   - Botão "Anterior": `bg-slate-800 hover:bg-slate-700` com ícone animado
   - Botão "Próximo": `bg-gradient-to-r from-cyan-600 to-blue-600` com ícone animado
@@ -300,6 +320,7 @@ Esta versão adiciona conteúdo multimídia rico às páginas Sistema Solar e Es
 ### ✨ Adicionado
 
 #### Página Sistema Solar
+
 - **Sketchfab Embed** - Modelo 3D interativo do Sistema Solar
 - **Instruções de interação** - Dicas de uso (rotacionar, zoom, explorar)
 - **Link externo** para visualização no Sketchfab
@@ -307,21 +328,25 @@ Esta versão adiciona conteúdo multimídia rico às páginas Sistema Solar e Es
 #### Página Estrutura da Terra (`/capitulo/planeta-terra/estrutura-terra`)
 
 **Visualização 3D via Sketchfab**
+
 - Modelo interativo das camadas internas da Terra
 - Autostart com tema escuro
 - Link para visualização no Sketchfab
 
 **Infográfico Educativo**
+
 - Infográfico "Desvendando a Estrutura da Terra"
 - Composição química e propriedades mecânicas das camadas
 - Fonte: Enciclopédia da Ciência
 
 **Vídeo Educativo**
+
 - Player do YouTube incorporado
 - Design destacado com gradiente vermelho/roxo
 - Link direto para o YouTube
 
 **Carousel de Imagens - O Interior do Nosso Planeta**
+
 - 12 imagens do PDF educativo
 - Transição automática a cada 5 segundos
 - Controles manuais: Anterior, Pausar/Reproduzir, Próxima
@@ -331,22 +356,26 @@ Esta versão adiciona conteúdo multimídia rico às páginas Sistema Solar e Es
 #### Novos Componentes
 
 **ImageCarousel.tsx** (`src/components/ui/`)
+
 - Carousel reutilizável com autoplay
 - Controles de navegação responsivos
 - Indicadores de progresso
 - Compatível com tema escuro
 
 **EarthLayersModel.tsx** (`src/components/content/`)
+
 - Modelo 3D das camadas terrestres
 - Desenvolvido com React Three Fiber
 
 #### Novos Assets
 
 **Imagens do PDF** (`/images/estrutura-terra/`)
+
 - 12 imagens renomeadas de 1.jpg a 12.jpg
 - Originalmente: O_Interior_do_Nosso_Planeta_Uma_Jornada_Científica_page-0001 a 0012
 
 **Infográfico** (`/images/infograficos/`)
+
 - Estrutura da Terra infográfico.png
 
 ### 🔧 Técnico
@@ -369,51 +398,60 @@ Esta versão adiciona uma página completa e rica sobre o Sistema Solar, com con
 #### Página Sistema Solar (`/capitulo/planeta-terra/sistema-solar`)
 
 **O Sol - Nossa Estrela**
+
 - Imagem principal do Sol com gradiente overlay
 - Dados científicos: diâmetro, temperatura, idade
 - Cards informativos com design moderno
 
 **Os 8 Planetas**
+
 - Grid de cards com imagens de alta qualidade
 - Informações: tipo (Rochoso/Gasoso/Gigante de Gelo), diâmetro, distância
 - Curiosidades científicas para cada planeta
 - Tags coloridas por tipo de planeta
 
 **Os 5 Planetas Anões**
+
 - Plutão em destaque com imagem grande
 - Grid com Éris, Haumea, Makemake e Ceres
 - Localização (Cinturão de Kuiper, Disco Disperso, etc.)
 - Curiosidades sobre cada planeta anão
 
 **Cometas Famosos**
+
 - 3 cometas com imagens: Halley, Hale-Bopp, 67P/Churyumov-Gerasimenko
 - Comparação detalhada Halley vs Hale-Bopp
 - Períodos orbitais, última e próxima passagem
 - Informações sobre a missão Rosetta
 
 **Satélites Naturais (10 Luas)**
+
 - Grid compacto de 5 colunas
 - Luas de Terra, Júpiter, Saturno, Urano e Netuno
 - Efeito hover com curiosidades
 - Tags coloridas por planeta
 
 **Vídeo Exclusivo do YouTube**
+
 - Player embeddado do vídeo criado especialmente para o site
 - Design destacado com gradiente vermelho/roxo
 - Link direto para o YouTube
 
 **Dados Científicos Expandidos**
+
 - Estatísticas principais (idade, massa do Sol, luas, asteroides)
 - 6 cards de curiosidades fascinantes
 - Seção de comparações de escala
 - 4 recordes do Sistema Solar
 
 #### API de Imagens
+
 - **`/api/planeta-img.ts`** - API route para servir imagens do sistema solar
 - Suporte para PNG e JPG
 - Cache de longa duração (1 ano)
 
 #### Imagens Adicionadas
+
 - 8 imagens de planetas (Mercúrio a Netuno)
 - 1 imagem do Sol
 - 5 imagens de planetas anões
@@ -421,6 +459,7 @@ Esta versão adiciona uma página completa e rica sobre o Sistema Solar, com con
 - 10 imagens de satélites naturais (luas)
 
 ### 🔧 Técnico
+
 - API route customizada para contornar limitações de arquivos estáticos
 - Importações dinâmicas para componentes 3D
 - Layout responsivo com grid adaptativo
@@ -436,6 +475,7 @@ Esta é a primeira versão beta pública da Enciclopédia da Ciência, incluindo
 ### ✨ Adicionado
 
 #### PWA (Progressive Web App)
+
 - **Service Worker manual** (`public/sw.js`) para cache e offline
 - **Manifest.json** com metadados do aplicativo
 - **Ícone SVG** para instalação do app
@@ -445,6 +485,7 @@ Esta é a primeira versão beta pública da Enciclopédia da Ciência, incluindo
 - **Cache de assets estáticos** (imagens, CSS, JS)
 
 #### Conteúdo Planeta Terra
+
 - **Introdução completa** com seções científicas detalhadas:
   - O Que É a Terra?
   - Dados Científicos Fundamentais
@@ -464,6 +505,7 @@ Esta é a primeira versão beta pública da Enciclopédia da Ciência, incluindo
 - **Vídeo do YouTube** incorporado ("Planeta Terra: Uma Biografia")
 
 #### Visualização 3D
+
 - **PlanetEarth3D component** - Terra 3D interativa com:
   - Textura realista da Terra
   - Rotação automática
@@ -472,6 +514,7 @@ Esta é a primeira versão beta pública da Enciclopédia da Ciência, incluindo
   - Fundo com estrelas
 
 #### Busca
+
 - **Sistema de busca** implementado com Fuse.js
 - **Busca fuzzy** por todo o conteúdo da enciclopédia
 
@@ -501,6 +544,7 @@ Esta é a primeira versão da Enciclopédia da Ciência, incluindo a estrutura b
 ### ✨ Adicionado
 
 #### Interface & Layout
+
 - **Header responsivo** com navegação, logo e menu mobile
 - **Sidebar** com lista de todos os 10 capítulos e ícones
 - **Footer** com links, badges de tecnologia e gradiente
@@ -508,6 +552,7 @@ Esta é a primeira versão da Enciclopédia da Ciência, incluindo a estrutura b
 - **Design system** com cores consistentes (cyan, purple, pink)
 
 #### Modo Escuro/Claro
+
 - **ThemeToggle component** com ícones animados (🌙/☀️)
 - **Detecção automática** de `prefers-color-scheme` do sistema
 - **Persistência** da preferência do usuário em `localStorage`
@@ -516,7 +561,9 @@ Esta é a primeira versão da Enciclopédia da Ciência, incluindo a estrutura b
 - **Scrollbar customizada** para ambos os temas
 
 #### Átomo Interativo
+
 - **HeroAtom (2D)** - Animação CSS com:
+
   - 3 órbitas com velocidades diferentes
   - 5 elétrons orbitando
   - Núcleo pulsante com gradiente
@@ -524,6 +571,7 @@ Esta é a primeira versão da Enciclopédia da Ciência, incluindo a estrutura b
   - Badges informativos (10 Capítulos, 207 Páginas, 100% Gratuito)
 
 - **Atom3D (Three.js)** - Modelo 3D interativo com:
+
   - React Three Fiber + Drei
   - Núcleo com prótons (vermelho) e nêutrons (azul)
   - 9 elétrons em 3 camadas orbitais (K, L, M)
@@ -535,23 +583,25 @@ Esta é a primeira versão da Enciclopédia da Ciência, incluindo a estrutura b
 - **Toggle 2D/3D** na seção hero para alternar visualizações
 
 #### Estrutura de Dados
+
 - **capitulos.ts** - Arquivo centralizado com:
   - 10 capítulos com slug, título, descrição
   - Ícones emoji únicos para cada capítulo
   - Cores de gradiente customizadas
 
 #### Páginas
+
 - **index.tsx** - Home page completa com todos os componentes
 - **sumario.tsx** - Placeholder para sumário
 - **buscar.tsx** - Placeholder para busca
 - **10 pastas de capítulos** com index.tsx
 
 #### Configurações
+
 - **tailwind.config.js** com:
   - `darkMode: 'class'`
   - Cores customizadas (primary, secondary, danger, success, warning)
   - Animações personalizadas (spin-slow, spin-reverse, pulse-slow)
-  
 - **globals.css** com:
   - `@custom-variant dark` para Tailwind v4
   - CSS variables para tema escuro
@@ -589,17 +639,20 @@ Esta é a primeira versão da Enciclopédia da Ciência, incluindo a estrutura b
 ### 🚧 Planejado para v1.0.0 (Release Final)
 
 #### Conteúdo
+
 - [ ] Completar todos os 10 capítulos com conteúdo científico
 - [ ] Mais visualizações 3D (Sistema Solar, Átomos, Moléculas)
 - [ ] Diagramas interativos
 
 #### Funcionalidades
+
 - [ ] Quiz interativo por capítulo
 - [ ] Sistema de progresso do usuário
 - [ ] Favoritos/Bookmarks
 - [ ] Navegação entre subcapítulos (anterior/próximo)
 
 #### UX/UI
+
 - [ ] Animações de entrada nas páginas
 - [ ] Loading skeletons
 - [ ] Tooltips informativos
