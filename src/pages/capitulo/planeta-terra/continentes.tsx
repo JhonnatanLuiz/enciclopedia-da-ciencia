@@ -780,12 +780,12 @@ export default function Continentes() {
 
                 <div className="space-y-8">
                   <div>
-                    <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-3">🎥 Vídeo: Ásia</h4>
+                    <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-3">🎥 Vídeo: Ásia: O continente dos Extremos.</h4>
                     <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-gray-200 dark:border-slate-700/50 bg-gray-100 dark:bg-slate-900">
                       <iframe
                         className="absolute inset-0 w-full h-full"
                         src="https://www.youtube-nocookie.com/embed/MgDroc7rLdk"
-                        title="Vídeo sobre a Ásia"
+                        title="Ásia: O continente dos Extremos."
                         loading="lazy"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowFullScreen
