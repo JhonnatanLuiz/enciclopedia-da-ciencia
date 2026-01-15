@@ -644,7 +644,7 @@ export default function Continentes() {
               </div>
             </div>
 
-            {/* Mídias (inicialmente: África e América) */}
+            {/* Mídias (inicialmente: África, América e Ásia) */}
             {continente.nome === "África" ? (
               <div className="bg-gray-200/30 dark:bg-slate-800/30 rounded-xl p-6 border border-gray-300/50 dark:border-slate-700/50">
                 <div className="flex items-center justify-between gap-4 mb-4">
@@ -762,6 +762,56 @@ export default function Continentes() {
                     <p className="text-sm text-center mt-6 text-gray-500 dark:text-slate-500">
                       💡 Use os controles para navegar manualmente ou deixe em reprodução automática.
                     </p>
+                  </div>
+                </div>
+              </div>
+            ) : continente.nome === "Ásia" ? (
+              <div className="bg-gray-200/30 dark:bg-slate-800/30 rounded-xl p-6 border border-gray-300/50 dark:border-slate-700/50">
+                <div className="flex items-center justify-between gap-4 mb-4">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
+                    <span>🎬</span>
+                    Mídias da Ásia
+                  </h3>
+                </div>
+
+                <p className="text-gray-600 dark:text-slate-400 text-sm mb-6">
+                  Assista ao vídeo abaixo e, em seguida, veja o infográfico e a galeria de imagens.
+                </p>
+
+                <div className="space-y-8">
+                  <div>
+                    <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-3">🎥 Vídeo: Ásia</h4>
+                    <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-gray-200 dark:border-slate-700/50 bg-gray-100 dark:bg-slate-900">
+                      <iframe
+                        className="absolute inset-0 w-full h-full"
+                        src="https://www.youtube-nocookie.com/embed/MgDroc7rLdk"
+                        title="Vídeo sobre a Ásia"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-3">🧾 Infográfico</h4>
+                    <div className="rounded-xl p-5 border border-dashed border-gray-400/60 dark:border-slate-700/60 bg-gray-100/40 dark:bg-slate-900/20 text-center">
+                      <p className="text-sm text-gray-600 dark:text-slate-400">
+                        Espaço reservado para o infográfico da Ásia.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="flex items-baseline justify-between gap-4 mb-3">
+                      <h4 className="text-lg font-bold text-gray-900 dark:text-white">🖼️ Galeria em carousel</h4>
+                      <span className="text-sm text-gray-500 dark:text-slate-500">em breve</span>
+                    </div>
+                    <div className="rounded-xl p-5 border border-dashed border-gray-400/60 dark:border-slate-700/60 bg-gray-100/40 dark:bg-slate-900/20 text-center">
+                      <p className="text-sm text-gray-600 dark:text-slate-400">
+                        Espaço reservado para a galeria de imagens da Ásia.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
