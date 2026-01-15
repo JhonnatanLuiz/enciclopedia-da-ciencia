@@ -7,6 +7,16 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ---
 
+## [0.5.2-beta] - 2026-01-15
+
+### ✨ Adicionado
+
+- **Continentes: Mídias da Ásia** (vídeo).
+
+### 🔧 Corrigido
+
+- **Continentes: título do vídeo da Ásia** atualizado para o nome oficial: "Ásia: O continente dos Extremos.".
+
 ## [0.5.1-beta] - 2026-01-05
 
 ### ✨ Adicionado
