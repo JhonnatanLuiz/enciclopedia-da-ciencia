@@ -267,7 +267,7 @@ export default function Buscar() {
                   Nenhum resultado encontrado
                 </h2>
                 <p className="text-gray-500 dark:text-gray-400 mb-6">
-                  Não encontramos nada para "<span className="font-semibold">{query}</span>".
+                  Não encontramos nada para &ldquo;<span className="font-semibold">{query}</span>&rdquo;.
                   <br />
                   Tente usar outras palavras-chave ou verifique a ortografia.
                 </p>
@@ -333,7 +333,7 @@ export default function Buscar() {
                   Seja específico
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Use termos como "sistema solar" em vez de apenas "sistema".
+                  Use termos como &ldquo;sistema solar&rdquo; em vez de apenas &ldquo;sistema&rdquo;.
                 </p>
               </div>
               <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md">
